@@ -8,7 +8,7 @@
     <h3 class="text-muted">COMP3550A1</h3>
   </div>
 
-  <form data-ng-controller="registerCtrl">
+  <form data-ng-controller="loginCtrl">
   <div class="form-group">
      <label for="userEmail">Email address</label>
      <input type="email" class="form-control" id="userEmail" placeholder="Email" data-ng-model="user.email">
@@ -17,6 +17,6 @@
      <label for="userPassword">Password</label>
      <input type="password" class="form-control" id="userPassword" placeholder="Password" data-ng-model="user.password">
    </div>
-   <button type="submit" class="btn btn-default" data-ng-click="registerUser();">Register</button>
+   <button type="submit" class="btn btn-default" data-ng-click="loginUser();">Login</button>
   </form>
 </div>
