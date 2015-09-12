@@ -1,0 +1,27 @@
+<div class="container">
+
+  <div data-ng-controller="suggestionsCtrl" data-ng-init="initSuggestions();getSuggestions();getUsers();">
+
+  <!-- use bootstrap 3 media objects to display suggestions -->
+  <div class="media" data-ng-repeat="(key, value) in suggestions">
+    <div class="media-left">
+      <a href="#">
+        <img class="media-object" ng-src="{{users[value.name].profileImageURL}}" alt="...">
+      </a>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">{{users[value.name].name}}</h4>
+      <p>{{value.text}}</p>
+    </div>
+  </div>
+
+  <!-- this is a form to submit suggestion based on your area. -->
+  <form>
+    <div class="form-group">
+      <textarea data-ng-model="suggestion" class="form-control col-md-6" id="suggestion" placeholder="Please enter your suggestion here."></textarea>
+    </div>
+    <button type="submit" class="btn btn-default" data-ng-click="postSuggestion();">Submit Suggestion</button>
+  </form>
+
+  </div>
+</div>
