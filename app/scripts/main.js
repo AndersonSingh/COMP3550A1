@@ -1,5 +1,5 @@
 
-var app = angular.module("application",["firebase", "ui.router"])
+var app = angular.module("application",["firebase", "ui.router","zingchart-angularjs"])
 
 /* this block config all the application states. */
 .config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $urlRouterProvider){
@@ -26,6 +26,17 @@ var app = angular.module("application",["firebase", "ui.router"])
       url: "/suggestions",
       templateUrl: "suggestions.html"
     })
+
+    .state("stats", {
+      url: "/stats",
+      templateUrl: "stats.html"
+    })
+}])
+
+/*This controller is responsible for generating the charts.*/
+
+.controller("graphController",["$scope", function($scope){
+      $scope.myData = [1,4,5,5,10];
 }])
 
 
