@@ -81,6 +81,14 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
 
 }])
 
+.controller("logoutCtrl", ["$scope", "AuthService", function($scope, AuthService){
+
+  $scope.logoutUser = function(){
+    AuthService.unAuth();
+  };
+
+}])
+
 .controller("suggestionsCtrl", ["$scope", "$firebaseObject", "AuthService" , function($scope, $firebaseObject, AuthService){
 
   /* initalize some variables. */
@@ -115,7 +123,6 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
          }
 
          /* if area was not detected, display alert accordingly. */
-         $scope.area = null;
          if($scope.area == null){
            $scope.area_alert = "Sorry, Your Area Could Not Be Identified, Loading Suggestions From All Areas.";
 
@@ -170,13 +177,13 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
 
 .service("AuthService",["$state", function($state){
 
-  var auth = null;
+  var ref = null
 
   return {
 
     setAuth : function(user){
 
-      var ref = new Firebase("https://comp3550a1.firebaseio.com");
+      ref = new Firebase("https://comp3550a1.firebaseio.com");
 
       ref.authWithPassword(user,function(error, authData){
         if(error){
@@ -184,8 +191,6 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
         }
         else{
           console.log("Successfully logged in user");
-          console.log(authData);
-          auth = authData;
 
           /* store some data about the user to display back for suggestion box. */
           ref.child("users").child(authData.uid).set({
@@ -198,12 +203,17 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
           $state.go("home");
 
         }
+
       });
 
     },
 
     getAuth : function(){
-      return auth;
+      return ref.getAuth();
+    },
+
+    unAuth : function(){
+      ref.unauth();
     }
 
   };
