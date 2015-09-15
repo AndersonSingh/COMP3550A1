@@ -44,6 +44,10 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
       $scope.myData = [1,4,5,5,10];
 }])
 
+.controller("graphControllerSol1",["$scope", function($scope){
+      $scope.myData = [87.1,91.7,92.5,87.7,88.8];
+}])
+
 
 /* this controller will allow a user to register an account using an email and password. */
 
