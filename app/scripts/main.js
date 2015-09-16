@@ -45,7 +45,127 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
 }])
 
 .controller("graphControllerSol1",["$scope", function($scope){
-      $scope.myData = [87.1,91.7,92.5,87.7,88.8];
+    
+    $scope.myObj = {
+
+    
+  "type": "bar3d",
+  "title": {
+    "text": "Confidence in Police to Control Crime"
+  },
+  "subtitle": {
+    "text": "Year - 2010 (11,155 Participants)"
+  },
+  "scaleX": {
+    "values":["Antigua & Barbuda","Barbados","Guyana","Jamaica","St. Lucia",
+        "Suriname","Trinidad & Tobago"],
+    "items-overlap":true,
+    "item":{
+        "font-angle":-45,
+        "auto-align":true
+    }
+  },
+  "scaleY": {
+    "label": {
+      "text": "Percent"
+    }
+  },
+  "legend": {},
+  "series": [
+    {
+      "text": "Some Confidence",
+      "lineColor": "#9e9e9e",
+      "backgroundColor": "#9e9e9e",
+      "borderColor": "#9e9e9e",
+      "marker": {
+        "borderWidth": 0,
+        "backgroundColor": "#9e9e9e"
+      },
+      "values": [
+        57.3,
+        65.4,
+        62.5,
+        59.4,
+        62.1,
+        52.7,
+        59.1
+      ]
+    },
+    {
+      "text": "Great Confidence",
+      "lineColor": "#2196F3",
+      "backgroundColor": "#2196F3",
+      "borderColor": "#2196F3",
+      "marker": {
+        "borderWidth": 0,
+        "backgroundColor": "#2196F3"
+      },
+      "values": [
+        14.3,
+        16.7,
+        14.3,
+        11.6,
+        15.5,
+        4.6,
+        11.9
+      ]
+    }
+  ]
+
+
+    };
+}])
+
+.controller("graphControllerSol2",["$scope", function($scope){
+    
+    $scope.myObj2 = {
+
+    
+  "type": "line",
+  "title": {
+    "text": "Social Intervention as a Means of Crime Control"
+  },
+  "subtitle": {
+    "text": "Year - 2010 (11,155 Participants)"
+  },
+  "scaleX": {
+    "values":["Education","Youth Programmes","Job Creation","Urban Areas",
+        "Reducing Poverty"],
+    "items-overlap":true,
+    "item":{
+        "font-angle":-45,
+        "auto-align":true
+    }
+  },
+  "scaleY": {
+    "values":"80:100:10",
+    "label": {
+      "text": "Percent"
+    }
+  },
+  "legend": {},
+  "series": [
+    {
+      "text": "Gov't Investment",
+      "lineColor": "#4caf50",
+      "backgroundColor": "#4caf50",
+      "borderColor": "#4caf50",
+      "marker": {
+        "borderWidth": 0,
+        "backgroundColor": "#4caf50"
+      },
+      "values": [
+        87.1,
+        91.7,
+        92.5,
+        87.7,
+        88.8
+      ]
+    }
+  ]
+
+
+    };
 }])
 
 

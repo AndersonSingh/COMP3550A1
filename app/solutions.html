@@ -86,8 +86,15 @@
 	</div>
 
 	<div ng-controller="graphControllerSol1">
-    	<zingchart id="chart-1" zc-values="myData" zc-type="bar" ></zingchart>
+    	<zingchart id="chart-1" zc-json="myObj"></zingchart>
 	</div>
+	<br>
+	<br>
+	<div ng-controller="graphControllerSol2">
+    	<zingchart id="chart-2" zc-json="myObj2" ></zingchart>
+	</div>
+
+
 
   </div>
 </div>
