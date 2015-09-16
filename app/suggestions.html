@@ -29,10 +29,36 @@
     </nav>
   </div>
 
-  <div data-ng-controller="suggestionsCtrl" data-ng-init="initSuggestions();getSuggestions();getUsers();">
+  <div data-ng-controller="suggestionsCtrl" data-ng-init="initSuggestions();">
+
+    <!-- area alert -->
+    <div>
+      <h3> {{area_alert}} </h3>
+    </div>
+
+    <div data-ng-if="area == null">
+
+      <div data-ng-repeat="(key, value) in suggestions">
+        <h3> Area: {{key}} <h3>
+        <!-- use bootstrap 3 media objects to display suggestions -->
+        <div class="media" data-ng-repeat="(key, value) in suggestions[key]">
+          <div class="media-left">
+            <a href="#">
+              <img class="media-object" ng-src="{{users[value.name].profileImageURL}}" alt="...">
+            </a>
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading">{{users[value.name].name}}</h4>
+            <p>{{value.text}}</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
 
   <!-- use bootstrap 3 media objects to display suggestions -->
-  <div class="media" data-ng-repeat="(key, value) in suggestions">
+  <div data-ng-if="area != null" class="media" data-ng-repeat="(key, value) in suggestions">
     <div class="media-left">
       <a href="#">
         <img class="media-object" ng-src="{{users[value.name].profileImageURL}}" alt="...">
