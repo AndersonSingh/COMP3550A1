@@ -24,7 +24,8 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
 
     .state("suggestions", {
       url: "/suggestions",
-      templateUrl: "suggestions.html"
+      templateUrl: "suggestions.html",
+      controller: "suggestionsCtrl"
     })
 
     .state("stats", {
@@ -45,10 +46,10 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
 }])
 
 .controller("graphControllerSol1",["$scope", function($scope){
-    
+
     $scope.myObj = {
 
-    
+
   "type": "bar3d",
   "title": {
     "text": "Confidence in Police to Control Crime"
@@ -117,10 +118,10 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
 }])
 
 .controller("graphControllerSol2",["$scope", function($scope){
-    
+
     $scope.myObj2 = {
 
-    
+
   "type": "line",
   "title": {
     "text": "Social Intervention as a Means of Crime Control"
