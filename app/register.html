@@ -1,33 +1,17 @@
-<div class="container">
-  <div class="header">
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand">COMP3550</a>
+<header data-ng-init="initSuggestions();" class="intro-header" style="background-image: url('images/sols.jpeg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>{{area}}</h1>
+                    <hr class="small">
+                    
+                </div>
+            </div>
         </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li><a data-ui-sref="home">Home</a></li>
-            <li><a data-ui-sref="suggestions">Suggestions</a></li>
-            <li><a class="active" data-ui-sref="register">Register</a></li>
-            <li><a data-ui-sref="login">Login</a></li>
-            <li><a data-ui-sref="solutions">Solutions</a></li>
-            <li><a data-ui-sref="stats">Cause and Effects</a></li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-  </div>
-
+    </div>
+</header>
+<div class="container">
   <form data-ng-controller="registerCtrl">
   <div class="form-group">
      <label for="userEmail">Email address</label>
