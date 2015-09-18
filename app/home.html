@@ -14,87 +14,101 @@
 
 <div id="main_content" class="container">
     
-    <div>
-        
-        
-        <div class="col-lg-8">
-            <div class="content_layout_a">
-                <div class="container">
-                    <div class="col-lg-4 col-sm-5">
-                        <h2>Welcome</h2>
-                        <p>This is our website. Dedicated to the educating of people on crime.</p>
-                        <p>Within this site we have a numerous pages for you the visitor to visit, learn and take part in. Firstly we would like to take this oppourtunity to request that you first Login to the site or if you have not registered already, to do so now. </p>
+    <!-- Page Content -->
+    <div class="col-lg-8">
+        <a  name="services"></a>
+        <div class="content_layout_a">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-sm-6">
+                        <hr class="section-heading-spacer">
+                        <div class="clearfix"></div>
+                        <h2 class="section-heading">Causes and Effects</h2>
+                        <p class="lead">This page seeks to inform readers about the causes of street gangs and the implications it has on the community, area and country by extension. </p>
                     </div>
-                    <div class="col-lg-3 col-sm-3"> 
-                        <a class="reg_log_btns btn btn-primary" data-ui-sref="login">Login</a>
-                        <a class="reg_log_btns btn btn-primary" data-ui-sref="register">Register</a>
-                    </div>
-                </div>
-            </div>
-            
-            
-            <div class="content_layout_b">
-                <div class="container">
-                    <div class="col-lg-4 col-sm-5">
-                        <p>Now, have you ever wondered what causes crime? What factors influence its growth in an area or nationally. If so then you should visit our cause and effects section to learn more. Educating the public about what influences crime is one of the first steps to finding solutions.</p>
-                        <p> While on the topic of finding solutions, another section we have is one that educates our users and our public on what they can do to help deter or even prevent crime in their area altogether. Crime affects everyone and can only be curbed if everyone works together against it.</p>
-                        <p> If this intrests you please click the first and second images to go to the Cause and Effect and Solutions pages respectfully </p>
-                    </div>
-                    <div class="col-lg-4 col-sm-3">
+                    <div class="col-lg-5 col-lg-offset-2 col-sm-6">
                         <a class="btn" data-ui-sref="stats">
-                            <img src="images/suggestions-bg2.jpg" class="img-responsive img-thumbnail" alt="Cause And Effect Page">
-                        </a> 
+                                <img src="images/crime.jpeg" class="img-responsive img-thumbnail" alt="Solutions Page" width="400" height ="400">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.container -->
+
+        </div>
+        <!-- /.content-section-a -->
+
+        <div class="content_layout_b">
+
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                        <hr class="section-heading-spacer">
+                        <div class="clearfix"></div>
+                        <h2 class="section-heading">Solutions</h2>
+                        <p class="lead">After reading about the causes and effects of crime, the solution page seeks to bring to light various ideas that could potentially reduce the presence of street gangs.</p>
+                    </div>
+                    <div class="col-lg-5 col-sm-pull-6  col-sm-6">
                         <a class="btn" data-ui-sref="solutions">
-                            <img src="images/sols.jpeg" class="img-responsive img-thumbnail" alt="Solutions Page">
+                                <img src="images/sols.jpeg" class="img-responsive img-thumbnail" alt="Solutions Page" width="400" height ="400">
                         </a>
                     </div>
                 </div>
+
             </div>
-            
-            
-            <div class="content_layout_a">
-                <div class="container">
-                    <div class="col-lg-4 col-sm-5">
-                        <p>Finally we have our main feature, our suggestions page. Here is where we put the minds of the people together and give them a voice.</p>
-                        <p> Any of our registered members can post suggestions here on this page. They can report suspicios activities to other members or simply engage in discussion over criminal matters that affect their community and they can do this anonymously if they wish. </p>      
-                    </div>
-                    <div class="col-lg-4 col-sm-3"> 
-                        <a class="btn" data-ui-sref="suggestions">
-                            <img src="images/suggestions-bg2.jpg" class="img-responsive img-thumbnail" alt="Suggestions Page">                            
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <p>Thank you for visiting our site if you have any issues to report or want to speak with one of our representatives please visit our contact page for contact information for our repesentatives and website administrators. </p>
-            
-            <a class="btn btn-primary" href="#">Contact</a>
-            
+            <!-- /.container -->
+
         </div>
-        
-        <div class="col-md-4">
-            <p>Recent Suggestions</p>
-            <div data-ng-controller="suggestionsCtrl" data-ng-init="initSuggestions();getSuggestions();getUsers();">
-                
-                <!-- use bootstrap 3 media objects to display suggestions -->
-                <div class="media" data-ng-repeat="(key, value) in suggestions">
-                    <div class="media-left">
-                        <a href="#">
-                            <imgclass="media-object" ng-src="{{users[value.name].profileImageURL}}" alt="...">
+        <!-- /.content-section-b -->
+
+        <div class="content_layout_a">
+
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-5 col-sm-6">
+                        <hr class="section-heading-spacer">
+                        <div class="clearfix"></div>
+                        <h2 class="section-heading">Suggestions</h2>
+                        <p class="lead">This page was created with the intention of having users share their comments on street gangs and by extension criminal activity in their area. User names will be kept anonymous.</p>
+                    </div>
+                    <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                        <a class="btn" data-ui-sref="stats">
+                                <img src="images/suggestions-bg2.jpg" class="img-responsive img-thumbnail" alt="Cause And Effect Page" width="400" height ="400">
                         </a>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.container -->
+
+        </div>
+        <!-- /.content-section-a -->
+
+        <div class="content_layout_b">
+                <p>Recent Suggestions</p>
+                <div data-ng-controller="suggestionsCtrl" data-ng-init="initSuggestions();getSuggestions();getUsers();">
+                    
+                    <!-- use bootstrap 3 media objects to display suggestions -->
+                    <div class="media" data-ng-repeat="(key, value) in suggestions">
+                        <div class="media-left">
+                            <a href="#">
+                                <imgclass="media-object" ng-src="{{users[value.name].profileImageURL}}" alt="...">
+                            </a>
+                        </div>
+                        
+                        <div class="media-body">
+                            <h4 class="media-heading">{{users[value.name].name}}</h4>
+                            <p>{{value.text}}</p>
+                        </div>
+                        
                     </div>
                     
-                    <div class="media-body">
-                        <h4 class="media-heading">{{users[value.name].name}}</h4>
-                        <p>{{value.text}}</p>
-                    </div>
-                    
                 </div>
-                
-            </div>
         </div>
-        
-        
     </div>
     
 </div>
