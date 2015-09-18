@@ -75,7 +75,8 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
   },
   "scaleY": {
     "label": {
-      "text": "Percent"
+      "text": "Percent",
+      "font-size":"16px"
     }
   },
   "legend": {},
