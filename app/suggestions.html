@@ -16,12 +16,7 @@
 <div class="container">
 
 
-  <div >
-
-    <!-- area alert -->
-    <div>
-      <h3> {{area_alert}} </h3>
-    </div>
+  <div>
 
     <div data-ng-if="area == null">
 
@@ -45,7 +40,8 @@
     </div>
 
   <!-- use bootstrap 3 media objects to display suggestions -->
-  <div data-ng-if="area != null" class="media" data-ng-repeat="(key, value) in suggestions">
+<!--  <div class="panel panel-default" data-ng-if="area != null" class="media" data-ng-repeat="(key, value) in suggestions">
+    <div class="panel-body">
     <div class="media-left">
       <a href="#">
         <img class="media-object" ng-src="{{users[value.name].profileImageURL}}" alt="...">
@@ -56,14 +52,47 @@
       <p>{{value.text}}</p>
     </div>
   </div>
+  </div>
+-->
 
-  <!-- this is a form to submit suggestion based on your area. -->
-  <form>
-    <div class="form-group">
-      <textarea data-ng-model="suggestion" class="form-control col-md-6" id="suggestion" placeholder="Please enter your suggestion here."></textarea>
+  <!-- use bootstrap 3 media objects to display suggestions on the page. -->
+  <div class="well">
+    <div class="row suggestion-block" data-ng-repeat="(key,value) in suggestions">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="media" >
+          <div class="media-left media-top">
+            <a>
+              <img class="media-object" data-ng-src="{{users[value.name].profileImageURL}}" alt="Display Picture">
+            </a>
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading suggestion">{{users[value.name].name}}</h4>
+            <p class="suggestion">{{value.text}}</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <button type="submit" class="btn btn-default" data-ng-click="postSuggestion();">Submit Suggestion</button>
+  </div>
+
+
+  <form class="form-horizontal">
+    <fieldset>
+      <!-- Textarea -->
+      <div class="form-group">
+        <div class="col-md-12">
+          <textarea ng-model="suggestion" class="form-control" id="suggestion" name="suggestion">Enter your suggestion on how to hanlde organized crime and gangs in your area. </textarea>
+        </div>
+      </div>
+
+      <!-- Button -->
+      <div class="form-group">
+        <div class="col-md-12">
+          <button id="post" name="post" class="btn btn-primary btn-lg" data-ng-click="postSuggestion();">Post Suggestion</button>
+        </div>
+      </div>
+    </fieldset>
   </form>
+
 
   </div>
 </div>
