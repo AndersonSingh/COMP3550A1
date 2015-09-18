@@ -11,3 +11,59 @@
         </div>
     </div>
 </header>
+
+<div id="main_content" class="container">
+    
+    <div>
+        
+        
+        <div class="col-md-8">
+            <p>Welcome</p>
+            <br>
+            <p>This is our website. Dedicated to the educating of people on crime.</p>
+            <p>Within this site we have a numerous pages for you the visitor to visit, learn and take part in. Firstly we would like to take this oppourtunity to request that you first Login to the site or if you have not registered already, to do so now. </p>
+            
+            <a class="btn btn-primary" data-ui-sref="login">Login</a>
+            <a class="btn btn-primary" data-ui-sref="register">Register</a>
+
+            <p>Now, have you ever wondered what causes crime? What factors influence its growth in an area or nationally. If so then you should visit our cause and effects section to learn more. Educating the public about what influences crime is one of the first steps to finding solutions. While on the topic of finding solutions, another section we have is one that educates our users and our public on what they can do to help deter or even prevent crime in their area altogether. Crime affects everyone and can only be curbed if everyone works together against it. </p>
+            
+            <a class="btn btn-primary" data-ui-sref="stats">Cause and Effects</a>
+            <a class="btn btn-primary" data-ui-sref="solutions">Solutions</a>
+            
+            <p>Finally we have our main feature, our suggestions page. Here is where we put the minds of the people together and give them a voice. Any of our registered members can post suggestions here on this page. They can report suspicios activities to other members or simply engage in discussion over criminal matters that affect their community and they can do this anonymously if they wish. </p>
+            
+            <a class="btn btn-primary" data-ui-sref="suggestions">Suggestions</a>
+            
+            <p>Thank you for visiting our site if you have any issues to report or want to speak with one of our representatives please visit our contact page for contact information for our repesentatives and website administrators. </p>
+            
+            <a class="btn btn-primary" href="#">About</a>
+            
+        </div>
+        
+        <div class="col-md-4">
+            <p>Recent Suggestions</p>
+            <div data-ng-controller="suggestionsCtrl" data-ng-init="initSuggestions();getSuggestions();getUsers();">
+                
+                <!-- use bootstrap 3 media objects to display suggestions -->
+                <div class="media" data-ng-repeat="(key, value) in suggestions">
+                    <div class="media-left">
+                        <a href="#">
+                            <imgclass="media-object" ng-src="{{users[value.name].profileImageURL}}" alt="...">
+                        </a>
+                    </div>
+                    
+                    <div class="media-body">
+                        <h4 class="media-heading">{{users[value.name].name}}</h4>
+                        <p>{{value.text}}</p>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+    </div>
+    
+</div>

@@ -121,28 +121,47 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
 
     $scope.myObj2 = {
 
-
   "type": "line",
   "title": {
+    "font-size":"22px",
     "text": "Social Intervention as a Means of Crime Control"
   },
   "subtitle": {
+    "font-size":"19px",
     "text": "Year - 2010 (11,155 Participants)"
   },
   "scaleX": {
-    "values":["Education","Youth Programmes","Job Creation","Urban Areas",
-        "Reducing Poverty"],
+    "values":["Education","Youth<br>Programmes","Job<br>Creation","Urban<br>Areas",
+        "Reducing<br>Poverty"],
     "items-overlap":true,
     "item":{
-        "font-angle":-45,
+        "font-size":"16px",
         "auto-align":true
+    },
+    "guide":{
+    "line-color":"red",
+    "line-width":2
     }
   },
   "scaleY": {
-    "values":"80:100:10",
+    "values":"80:100:5",
     "label": {
-      "text": "Percent"
+      "text": "Percent",
+      "padding-left":"25px",
+      "font-size":"16px"
+    },
+    "item":{
+        "font-size":"16px",
+        "auto-align":true
+    },
+    "guide":{
+    "line-color":"red",
+    "line-width":2
     }
+  },
+  "tooltip":{ 
+      "text":"%v %",
+      "font-size":"16px"  
   },
   "legend": {},
   "series": [
@@ -162,7 +181,8 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
         87.7,
         88.8
       ]
-    }
+    },
+
   ]
 
 
