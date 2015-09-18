@@ -123,11 +123,11 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
 
   "type": "line",
   "title": {
-    "font-size":"22px",
+    "font-size":"18px",
     "text": "Social Intervention as a Means of Crime Control"
   },
   "subtitle": {
-    "font-size":"19px",
+    "font-size":"16px",
     "text": "Year - 2010 (11,155 Participants)"
   },
   "scaleX": {
@@ -135,7 +135,7 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
         "Reducing<br>Poverty"],
     "items-overlap":true,
     "item":{
-        "font-size":"16px",
+        "font-size":"14px",
         "auto-align":true
     },
     "guide":{
@@ -144,14 +144,14 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
     }
   },
   "scaleY": {
-    "values":"80:100:5",
+    "values":"80:100:2",
     "label": {
       "text": "Percent",
       "padding-left":"25px",
       "font-size":"16px"
     },
     "item":{
-        "font-size":"16px",
+        "font-size":"14px",
         "auto-align":true
     },
     "guide":{
@@ -184,9 +184,12 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
     },
 
   ]
+  };
 
-
-    };
+  $scope.myRender = {
+      width:  "100%", 
+      height: 'auto'
+  };
 }])
 
 
