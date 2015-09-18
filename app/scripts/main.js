@@ -52,18 +52,25 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
 
   "type": "bar3d",
   "title": {
+  	"font-size":"18px",
     "text": "Confidence in Police to Control Crime"
   },
   "subtitle": {
+  	"font-size":"16px",
     "text": "Year - 2010 (11,155 Participants)"
   },
   "scaleX": {
-    "values":["Antigua & Barbuda","Barbados","Guyana","Jamaica","St. Lucia",
-        "Suriname","Trinidad & Tobago"],
+    "values":["Antigua &<br>Barbuda","Barbados","Guyana","Jamaica","St. Lucia",
+        "Suriname","Trinidad &<br>Tobago"],
     "items-overlap":true,
     "item":{
+    	"font-size":"14px",
         "font-angle":-45,
         "auto-align":true
+    },
+    "guide":{
+    "line-color":"red",
+    "line-width":2
     }
   },
   "scaleY": {
@@ -115,6 +122,11 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
 
 
     };
+
+    $scope.myRender = {
+      width:  "100%", 
+      height: 'auto'
+  };
 }])
 
 .controller("graphControllerSol2",["$scope", function($scope){
