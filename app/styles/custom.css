@@ -1,0 +1,11 @@
+.suggestion-block{
+  margin-bottom: 10px;
+  padding: 30px 20px;
+  border-bottom: 3px solid white;
+}
+
+h4,p.suggestion{
+  font-family: "Lucida Console", Monaco, monospace;
+  line-height: 1.6;
+  text-align: justify;
+}

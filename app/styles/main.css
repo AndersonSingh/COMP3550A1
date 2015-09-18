@@ -86,4 +86,9 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+
+  /* #SuggestionArea:hover{
+  width = 400px;
+} Transition for the textarea in the contact page
+*/
 }

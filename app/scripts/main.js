@@ -121,7 +121,6 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
 
     $scope.myObj2 = {
 
-
   "type": "line",
   "title": {
     "font-size":"22px",
@@ -182,7 +181,8 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
         87.7,
         88.8
       ]
-    }
+    },
+
   ]
 
 
