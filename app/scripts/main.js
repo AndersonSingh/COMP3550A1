@@ -37,6 +37,11 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
       url: "/solutions",
       templateUrl: "solutions.html"
     })
+
+    .state("contact", {
+      url: "/contact",
+      templateUrl: "contact.html"
+    })
 }])
 
 /*This controller is responsible for generating the charts.*/
