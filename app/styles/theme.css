@@ -365,6 +365,13 @@ body {
   webkit-tap-highlight-color: #0085a1;
 }
 
+<<<<<<< HEAD
+ #SuggestionArea:hover{
+  width: 475px;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+} 
+=======
 .content_layout_a {
     padding: 50px 0;
     background-color: #f8f8f8;
@@ -422,3 +429,4 @@ body {
   font-weight: 300;
   text-align: justify;
 }
+>>>>>>> 8581c8f0866d30a09ce8364a1fc47f15103bb14a
