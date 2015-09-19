@@ -32,6 +32,12 @@ Wow Factors
 2. Interactive Statistics Charts.
 3. Post/View Crime Suggestions Based On Current Location. (Web 2.0)
 
+Low Fidelity Prototypes
+----------------------------
+
+<img src="app/images/prototype-01.png">
+
+<img src="app/images/prototype-02.png">
 
 
 Bonus Mark Justification
