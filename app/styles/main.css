@@ -275,3 +275,14 @@ h4,p.suggestion{
 #chart-1, #chart-2{
   display:block;
 }
+
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
+
+.carousel-indicators li {
+  background-color: #000000;
+}
+.carousel-indicators .active {
+  background-color: #FF0000;
+}
