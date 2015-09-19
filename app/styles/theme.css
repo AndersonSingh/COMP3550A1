@@ -130,7 +130,6 @@ hr.small {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  margin-bottom: 50px;
 }
 .intro-header .site-heading,
 .intro-header .post-heading,
@@ -378,15 +377,48 @@ body {
 }
 
 .reg_log_btns{
-    
+
     border: 2px solid black;
     margin-top: 100px;
   }
 
-h2{
-  text-align: center;
+
+
+
+/*
+  This css is used for the home page layout. It's adapted from the startbootstrap landing page.
+  If anyone needs to make edits, refer to the original template design on the website. 
+*/
+
+.home-content-layout-a {
+    padding: 50px 0;
+    background-color: #f8f8f8;
 }
 
-p{
-  font-family: Verdana, Geneva, sans-serif;
+.home-content-layout-b {
+    padding: 50px 0;
+    border-top: 1px solid #A8A8A8;
+    border-bottom: 1px solid #A8A8A8;
+}
+
+
+.home-content-linebreak{
+    float: left;
+    width: 200px;
+    border-top: 3px solid #404040;
+}
+
+.home-content-heading{
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.home-content-paragraph{
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  text-align: justify;
 }
