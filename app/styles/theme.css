@@ -257,3 +257,9 @@ footer .copyright {
   font-weight: 300;
   text-align: justify;
 }
+
+ #SuggestionArea:hover{
+  width: 475px;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+} 

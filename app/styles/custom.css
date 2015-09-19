@@ -9,3 +9,9 @@ h4,p.suggestion{
   line-height: 1.6;
   text-align: justify;
 }
+
+#login-list-notes{
+	text-align: center;
+	border-style: solid;
+    border-width: 1px;
+}

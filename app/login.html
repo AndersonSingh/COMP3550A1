@@ -1,4 +1,4 @@
-<header data-ng-init="initSuggestions();" class="intro-header" style="background-image: url('images/sols.jpeg')">
+<header data-ng-init="initSuggestions();" class="intro-header" style="background-image: url('images/login.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -11,7 +11,21 @@
         </div>
     </div>
 </header>
-<div class="container">
+  <div class="container">
+    <div class="page-header">
+          <h1>Login</h1>
+    </div>
+  <div class="row">
+    <div class="col-ld-12 col-md-12 col-sm-12">
+      <p> Upon logging in, you will we able to post suggestions relating to crime in your area. <br>Please note the following:</p>
+    <ul id="login-list-notes">
+      <li>Personal information will not be shared among users on the website.</li>
+      <li>Any suggestions that we find inappropriate will be removed accordingly.</li>
+      <li>User names will be kept anonymous.</li>
+    </ul>
+    </div>
+  </div>
+  <br>
   <form data-ng-controller="loginCtrl">
   <div class="form-group">
      <label for="userEmail">Email address</label>
