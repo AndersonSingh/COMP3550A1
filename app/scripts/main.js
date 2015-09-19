@@ -57,23 +57,31 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
 
   "type": "bar3d",
   "title": {
+  	"font-size":"18px",
     "text": "Confidence in Police to Control Crime"
   },
   "subtitle": {
+  	"font-size":"16px",
     "text": "Year - 2010 (11,155 Participants)"
   },
   "scaleX": {
-    "values":["Antigua & Barbuda","Barbados","Guyana","Jamaica","St. Lucia",
-        "Suriname","Trinidad & Tobago"],
+    "values":["Antigua &<br>Barbuda","Barbados","Guyana","Jamaica","St. Lucia",
+        "Suriname","Trinidad &<br>Tobago"],
     "items-overlap":true,
     "item":{
+    	"font-size":"14px",
         "font-angle":-45,
         "auto-align":true
+    },
+    "guide":{
+    "line-color":"red",
+    "line-width":2
     }
   },
   "scaleY": {
     "label": {
-      "text": "Percent"
+      "text": "Percent",
+      "font-size":"16px"
     }
   },
   "legend": {},
@@ -120,6 +128,11 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
 
 
     };
+
+    $scope.myRender = {
+      width:  "100%", 
+      height: 'auto'
+  };
 }])
 
 .controller("graphControllerSol2",["$scope", function($scope){
@@ -128,11 +141,11 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
 
   "type": "line",
   "title": {
-    "font-size":"22px",
+    "font-size":"18px",
     "text": "Social Intervention as a Means of Crime Control"
   },
   "subtitle": {
-    "font-size":"19px",
+    "font-size":"16px",
     "text": "Year - 2010 (11,155 Participants)"
   },
   "scaleX": {
@@ -140,7 +153,7 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
         "Reducing<br>Poverty"],
     "items-overlap":true,
     "item":{
-        "font-size":"16px",
+        "font-size":"14px",
         "auto-align":true
     },
     "guide":{
@@ -149,14 +162,14 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
     }
   },
   "scaleY": {
-    "values":"80:100:5",
+    "values":"80:100:2",
     "label": {
       "text": "Percent",
       "padding-left":"25px",
       "font-size":"16px"
     },
     "item":{
-        "font-size":"16px",
+        "font-size":"14px",
         "auto-align":true
     },
     "guide":{
@@ -189,9 +202,12 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
     },
 
   ]
+  };
 
-
-    };
+  $scope.myRender = {
+      width:  "100%", 
+      height: 'auto'
+  };
 }])
 
 
