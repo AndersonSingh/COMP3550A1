@@ -4,7 +4,7 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
 /* this block config all the application states. */
 .config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $urlRouterProvider){
 
-  $urlRouterProvider.otherwise("/suggestions");
+  $urlRouterProvider.otherwise("/home");
 
   $stateProvider
     .state("home", {
@@ -120,11 +120,9 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
       ]
     }
   ]
+  };
 
-
-    };
-
-    $scope.myRender = {
+   $scope.myRender = {
       width:  "100%", 
       height: 'auto'
   };
