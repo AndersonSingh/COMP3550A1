@@ -1,56 +1,57 @@
-(function(){
-  "use strict";
+(function () {
+    "use strict";
 
 /* this line of code creates the main module for the application and adds the required dependencies. */
-var app = angular.module("application",["firebase", "ui.router","zingchart-angularjs"])
+    angular.module("application",["firebase", "ui.router","zingchart-angularjs"])
 
 /*
   this block of code, creates the routes (links) to allow the user to navigate the application.
   Anyone that needs to add a new page to the application, can follow the below template and add
   a new route for their page.
 */
-.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $urlRouterProvider){
 
-  /* launch on the home page automatically. */
-  $urlRouterProvider.otherwise("/home");
+	.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $urlRouterProvider){
 
-  $stateProvider
-    .state("home", {
-      url: "/home",
-      templateUrl: "home.html"
-    })
+	  /* launch on the home page automatically. */
+	  $urlRouterProvider.otherwise("/home");
 
-    .state("register", {
-      url: "/register",
-      templateUrl: "register.html",
-      controller: "registerCtrl"
-    })
+	  $stateProvider
+	    .state("home", {
+	      url: "/home",
+	      templateUrl: "home.html"
+	    })
 
-    .state("login", {
-      url: "/login",
-      templateUrl: "login.html"
-    })
+	    .state("register", {
+	      url: "/register",
+	      templateUrl: "register.html",
+	      controller: "registerCtrl"
+	    })
 
-    .state("suggestions", {
-      url: "/suggestions",
-      templateUrl: "suggestions.html",
-      controller: "suggestionsCtrl"
-    })
+	    .state("login", {
+	      url: "/login",
+	      templateUrl: "login.html"
+	    })
 
-    .state("stats", {
-      url: "/stats",
-      templateUrl: "stats.html"
-    })
+	    .state("suggestions", {
+	      url: "/suggestions",
+	      templateUrl: "suggestions.html",
+	      controller: "suggestionsCtrl"
+	    })
 
-    .state("solutions", {
-      url: "/solutions",
-      templateUrl: "solutions.html"
-    })
+	    .state("stats", {
+	      url: "/stats",
+	      templateUrl: "stats.html"
+	    })
 
-    .state("contact", {
-      url: "/contact",
-      templateUrl: "contact.html"
-    });
+	    .state("solutions", {
+	      url: "/solutions",
+	      templateUrl: "solutions.html"
+	    })
+
+	    .state("contact", {
+	      url: "/contact",
+	      templateUrl: "contact.html"
+	    });
 
 
 }])
@@ -234,9 +235,11 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
     ref.createUser($scope.user,function(error, userData){
       if(error){
         alert(error);
+
       }
       else{
         alert("Successfully created user account. You may now login.");
+				console.log(userData);
       }
     });
 
@@ -302,7 +305,6 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
 
       /* we need to convert the lat/long value to a city/ town using google's reverse geocoding. */
       var geocoder = new google.maps.Geocoder();
-      var latlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
 
       geocoder.geocode({latLng: $scope.location}, function(results, status) {
 	       if (status === google.maps.GeocoderStatus.OK) {
@@ -313,7 +315,7 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
          }
 
          /* an area was found. */
-         if($scope.area != null){
+         if($scope.area !== null){
 
            /* now that we have an area, we can load suggestions for this area. */
            var suggestionsRef = new Firebase("https://comp3550a1.firebaseio.com/suggestions/" + $scope.area);
@@ -326,6 +328,7 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
        }); /* end geocode block */
     }, function(error){
         alert("There was an error retrieving your location, you may have blocked the location feature.");
+				console.log(error);
         var suggestionsRef = new Firebase("https://comp3550a1.firebaseio.com/suggestions");
         $scope.suggestions = $firebaseObject(suggestionsRef);
     }); /* end navigation block. */
@@ -339,9 +342,9 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
     var auth = AuthService.getAuth();
     var id = null;
     /* valid id. */
-    if(auth != null){
+    if(auth !== null){
       id = auth.uid;
-      if($scope.area == null){
+      if($scope.area === null){
         var temp  = "unknown";
         ref.child("suggestions").child(temp).push({text : $scope.suggestion, name : id});
       }
@@ -407,5 +410,5 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
     }
 
   };
-}])
+}]);
 }());
