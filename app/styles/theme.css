@@ -370,7 +370,7 @@ body {
   width: 475px;
   transition-duration: 1s;
   transition-timing-function: linear;
-} 
+}
 =======
 .content_layout_a {
     padding: 50px 0;
@@ -394,7 +394,7 @@ body {
 
 /*
   This css is used for the home page layout. It's adapted from the startbootstrap landing page.
-  If anyone needs to make edits, refer to the original template design on the website. 
+  If anyone needs to make edits, refer to the original template design on the website.
 */
 
 .home-content-layout-a {
@@ -429,4 +429,3 @@ body {
   font-weight: 300;
   text-align: justify;
 }
->>>>>>> 8581c8f0866d30a09ce8364a1fc47f15103bb14a
