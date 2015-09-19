@@ -25,7 +25,7 @@ Alternatively you may run:
 > **Command:**
 >- bower install
 
-	Wow Factors
+Wow Factors
 -------------
 
 1. Login/Registration Functionality.
