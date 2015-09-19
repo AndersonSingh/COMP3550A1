@@ -1,3 +1,8 @@
+<!--
+  This page as well as all other pages in this project contain this block of code which allows the header of the page to be displayed.
+  A background image accompanied by all the links present within the site is present.
+-->
+
 <header data-ng-init="initSuggestions();" class="intro-header" style="background-image: url('images/sols.jpeg')">
     <div class="container">
         <div class="row">
@@ -11,6 +16,13 @@
         </div>
     </div>
 </header>
+
+<!--
+  This is the content section of the page. Firstly, three images along with short descriptions will be displayed in a row. The use of the "row" class followed by 
+  "col-sm-6 col-md-4"  allowed the displaying of 3 images along with their text to be done in a single row.
+-->
+
+
 <div class="container">
     <div class="page-header">
     	<h1>Solutions to Street Gangs <small> Combatting the problem...</small></h1>
@@ -70,6 +82,12 @@
 	  </div>
 	</div>
 
+<!--
+  After the displaying of the images and the description, the user is presented with more reading to do, informing him/her om
+  the solutions that be taken up to curb the incidence of street gangs.
+  After these 2 paragraphs, a graph containing data extracted from the human development reports will be displayed.
+-->
+
 	<div class="row">
 		<div class="col-ld-12 col-md-12 col-sm-12">
 			<p> The police system in the Caribbean
@@ -113,8 +131,11 @@
 				fairness, effectiveness, transparency and accountability.
 			</p>
 			<br>
+			<!--
+			  The following lines of code show the html code for the first graph. It refers to a controller in the javascript file while takes over the execution.
+			-->
 			<div ng-controller="graphControllerSol1">
-	    		<zingchart id="chart-1" zc-json="myObj" zc-render="myRender" style="height:100%; width:100%; display:block;"></zingchart>
+	    		<zingchart id="chart-1" zc-json="myObj" zc-render="myRender" ></zingchart>
 			</div>
 		</div>
 	</div>
@@ -139,8 +160,11 @@
 				in public actions.
 			</p>
 			<br>
+			<!--
+			  The following lines of code show the html code for the first graph. It refers to a controller in the javascript file while takes over the execution.
+			-->
 			<div ng-controller="graphControllerSol2">
-		    	<zingchart id="chart-2" zc-json="myObj2" zc-render="myRender" style="height:100%; width:100%; display:block;"></zingchart>
+		    	<zingchart id="chart-2" zc-json="myObj2" zc-render="myRender" ></zingchart>
 		    </div>
 		    <br>
 			<p>
@@ -175,5 +199,4 @@
 	<br>
 	<br>
 	<br>
-
   </div>

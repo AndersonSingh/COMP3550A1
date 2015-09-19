@@ -62,10 +62,7 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
 }])
 
 .controller("graphControllerSol1",["$scope", function($scope){
-
-    $scope.myObj = {
-
-
+  $scope.myObj = {
   "type": "bar3d",
   "title": {
   	"font-size":"18px",
@@ -138,9 +135,9 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
   ]
   };
 
-   $scope.myRender = {
-      width:  "100%",
-      height: 'auto'
+  $scope.myRender = {
+    width:  "100%",
+    height: 'auto'
   };
 }])
 
