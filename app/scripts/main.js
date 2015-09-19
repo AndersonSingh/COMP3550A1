@@ -1,9 +1,17 @@
+(function(){
+  "use strict";
 
+/* this line of code creates the main module for the application and adds the required dependencies. */
 var app = angular.module("application",["firebase", "ui.router","zingchart-angularjs"])
 
-/* this block config all the application states. */
+/*
+  this block of code, creates the routes (links) to allow the user to navigate the application.
+  Anyone that needs to add a new page to the application, can follow the below template and add
+  a new route for their page.
+*/
 .config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $urlRouterProvider){
 
+  /* launch on the home page automatically. */
   $urlRouterProvider.otherwise("/home");
 
   $stateProvider
@@ -14,7 +22,8 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
 
     .state("register", {
       url: "/register",
-      templateUrl: "register.html"
+      templateUrl: "register.html",
+      controller: "registerCtrl"
     })
 
     .state("login", {
@@ -41,7 +50,9 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
     .state("contact", {
       url: "/contact",
       templateUrl: "contact.html"
-    })
+    });
+
+
 }])
 
 /*This controller is responsible for generating the charts.*/
@@ -128,7 +139,7 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
   };
 
    $scope.myRender = {
-      width:  "100%", 
+      width:  "100%",
       height: 'auto'
   };
 }])
@@ -175,9 +186,9 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
     "line-width":2
     }
   },
-  "tooltip":{ 
+  "tooltip":{
       "text":"%v %",
-      "font-size":"16px"  
+      "font-size":"16px"
   },
   "legend": {},
   "series": [
@@ -203,41 +214,51 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
   };
 
   $scope.myRender = {
-      width:  "100%", 
+      width:  "100%",
       height: 'auto'
   };
 }])
 
 
-/* this controller will allow a user to register an account using an email and password. */
+/*
+  this controller will be placed on the registration page. It will allow a visitor
+  to register for an account on the website.
+*/
 
 .controller("registerCtrl",["$scope", function($scope){
 
   $scope.user = {};
 
-  /* this function will call on firebase to register a user account. */
+  /* this function uses firebase simple email and password method to create a user account. */
   $scope.registerUser = function(){
+
     var ref = new Firebase("https://comp3550a1.firebaseio.com");
 
     ref.createUser($scope.user,function(error, userData){
       if(error){
-        console.log("Error creating a user: " + error);
+        alert(error);
       }
       else{
-        console.log("Created a new user: " + userData.uid);
+        alert("Successfully created user account. You may now login.");
       }
     });
+
   };
 
 }])
 
-/* this controller will log a user into an account using firebase authenication */
+/*
+  this controller will be placed on the login page and allow a user to signin into
+  an already existant account.
+
+  You'll be sent to the home page unpon successfully logging in.
+ */
 
 .controller("loginCtrl",["$scope", "AuthService", function($scope, AuthService){
 
   $scope.user = {};
 
-  /* this function will call on firebase on authenicate a user using a custom service. */
+  /* this function will call on firebase to authenicate a user using a custom service. */
   $scope.loginUser = function(){
     AuthService.setAuth($scope.user);
   };
@@ -245,10 +266,17 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
 
 }])
 
+/*
+  this controller will be used to logout a currently authenicated user.
+
+ */
 .controller("logoutCtrl", ["$scope", "AuthService", function($scope, AuthService){
 
   $scope.logoutUser = function(){
-    AuthService.unAuth();
+    /* if there is a user, log him out. */
+    if(AuthService.getAuth() !== null){
+      AuthService.unAuth();
+    }
   };
 
 
@@ -279,24 +307,16 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
       var geocoder = new google.maps.Geocoder();
       var latlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
 
-      geocoder.geocode({'latLng': $scope.location}, function(results, status) {
-	       if (status == google.maps.GeocoderStatus.OK) {
+      geocoder.geocode({latLng: $scope.location}, function(results, status) {
+	       if (status === google.maps.GeocoderStatus.OK) {
            /* decode city/town here to organize vendors. */
            $scope.area = results[0].address_components[1].short_name;
            /* update the city list. */
            ref.child("areas").child($scope.area).set(true);
          }
 
-         /* if area was not detected, display alert accordingly. */
-         if($scope.area == null){
-           $scope.area_alert = "Sorry, Your Area Could Not Be Identified, Loading Suggestions From All Areas.";
-
-           /* since we could not find an area, load all suggestions. */
-           var suggestionsRef = new Firebase("https://comp3550a1.firebaseio.com/suggestions");
-           $scope.suggestions = $firebaseObject(suggestionsRef);
-         }
-         else{
-           $scope.area_alert = "Loading Suggestions From " + $scope.area + " And Surrounding Areas.";
+         /* an area was found. */
+         if($scope.area != null){
 
            /* now that we have an area, we can load suggestions for this area. */
            var suggestionsRef = new Firebase("https://comp3550a1.firebaseio.com/suggestions/" + $scope.area);
@@ -307,6 +327,10 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
 
 
        }); /* end geocode block */
+    }, function(error){
+        alert("There was an error retrieving your location, you may have blocked the location feature.");
+        var suggestionsRef = new Firebase("https://comp3550a1.firebaseio.com/suggestions");
+        $scope.suggestions = $firebaseObject(suggestionsRef);
     }); /* end navigation block. */
 
   };
@@ -338,24 +362,27 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
 }])
 
 
-/* this is an authenication service, that will make the auth info available to all pages that request it. */
+/*
+  this is an authenication service that will be used to handle user authenication.
+  The login function will use this service to allow a user to signin.
+  The logout function will use this service to signout a user.
+  Any page that is password protected must use getAuth(), if its set, a user is signed in,
+  if it is null no one is signed in, and you can block the page.
+ */
 
 .service("AuthService",["$state", function($state){
 
-  var ref = null
+  var ref = new Firebase("https://comp3550a1.firebaseio.com");
 
   return {
 
     setAuth : function(user){
 
-      ref = new Firebase("https://comp3550a1.firebaseio.com");
-
       ref.authWithPassword(user,function(error, authData){
         if(error){
-          console.log("Failed to login user: " + error);
+          alert(error);
         }
         else{
-          console.log("Successfully logged in user");
 
           /* store some data about the user to display back for suggestion box. */
           ref.child("users").child(authData.uid).set({
@@ -372,14 +399,16 @@ var app = angular.module("application",["firebase", "ui.router","zingchart-angul
       });
 
     },
-
+    /* use this function to return details about the currently authenicated user. */
     getAuth : function(){
       return ref.getAuth();
     },
 
+    /* logout the current user. */
     unAuth : function(){
       ref.unauth();
     }
 
   };
 }])
+}());
