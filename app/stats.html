@@ -1,36 +1,269 @@
-<div class="container">
-  <div class="header">
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand">COMP3550</a>
+<header data-ng-init="initSuggestions();" class="intro-header" style="background-image: url('images/security_cam.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>{{area}}</h1>
+                    <hr class="small">
+                    
+                </div>
+            </div>
         </div>
+    </div>
+</header>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li><a data-ui-sref="home">Home</a></li>
-            <li><a data-ui-sref="suggestions">Suggestions</a></li>
-            <li><a class="active" data-ui-sref="register">Register</a></li>
-            <li><a data-ui-sref="login">Login</a></li>
-            <li><a data-ui-sref="solutions">Solutions</a></li>
-	    <li><a data-ui-sref="stats">Cause and Effects</a></li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
+<div class="container">
+  <div class="page-header">
+      <h1 class="text-center">Causes and Effects of Street Gangs and Organized Crime</h1>
   </div>
 
-  <div ng-controller="graphController">
-    <zingchart id="chart-1" zc-values="myData" zc-type="bar" ></zingchart>
+  <div class="row">
+      <h3>Causes</h3>
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
+
+      <h4>Social Structural Conditions</h4>
+      <p>
+        Community and social cohesion are vital as they promote the development of shared goals and provide
+        the means for collective action. When there exists a willingness and ability to develop and achieve shared
+        goals within a community, then cooperative efforts are promoted to define, monitor, and condemn undesirable
+        behaviours within said community. However, if these social structural conditions are absent, then communities
+        cannot exercise informal social control over their neighbourhoods. Consequently, these neighbourhoods start
+        experiencing elevated levels of crime and delinquency in comparison to other communities. Table 1 illustrates this as
+        an analysis of the data suggests that informal social control, community cohesion, and social cohesion are
+        lower in communities with street gangs. 
+      </p>
+    </div>
+
+    </div>
+
+    <div class="row">
+  <!--
+        <div class="panel-body">
+          <p>Table 1. Mean Levels of Informal Social Control and Community Cohesion
+          with and without Gangs, Caribbean-7, 2010
+          </p>
+        </div>
+-->
+      <table class="table table-hover table-bordered">
+        <caption> Table 1. Mean Levels of Informal Social Control and Community Cohesion
+          with and without Gangs, Caribbean-7, 2010
+        </caption>
+        <col>
+        <colgroup span="2"> </colgroup>
+        <colgroup span="2"> </colgroup>
+        <thead>
+          <tr> 
+            <th rowpan="2" scope="col">Country</th>
+            <th colspan="2" id="informal" scope="colgroup">Informal Social Control</th>
+            <th colspan="2" id="cohesion" scope="colgroup">Community Cohesion</th>
+          </tr>
+
+          <tr>
+            <th rowspan="2"> </th>
+            <th headers="informal" scope="col">No Gangs</th>
+            <th headers="informal" scope="col">Gangs</th>
+            <th headers="cohesion" scope="col">No Gangs</th>
+            <th headers="cohesion" scope="col">Gangs</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+          <tr>
+            <th scope="row">Antigua & Barbuda</th>
+            <td>-0.06</td>
+            <td>-0.42</td>
+            <td>-0.13</td>
+            <td>-0.71</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Barbados</th>
+            <td>-0.10</td>
+            <td>-0.12</td>
+            <td>-0.15</td>
+            <td>-0.63</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Guyana</th>
+            <td>0.15</td>
+            <td>-0.17</td>
+            <td>0.15</td>
+            <td>-0.44</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Jamaica</th>
+            <td>0.31</td>
+            <td>0.13</td>
+            <td>0.41</td>
+            <td>-0.14</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Saint Lucia</th>
+            <td>0.20</td>
+            <td>-0.31</td>
+            <td>0.03</td>
+            <td>-0.57</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Suriname</th>
+            <td>-0.20</td>
+            <td>-0.28</td>
+            <td>0.01</td>
+            <td>-0.17</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Trinidad & Tobago</th>
+            <td>-0.02</td>
+            <td>-0.32</td>
+            <td>0.13</td>
+            <td>-0.39</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Caribbean-7</th>
+            <td>0.03</td>
+            <td>-0.23</td>
+            <td>0.07</td>
+            <td>-0.44</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><small>Source: UNDP Citizen Security Survey 2010.
+      Note: Base: all respondents (N = 11,155). ‘Gangs’ and ‘No gangs’ refer to the presence or absence of gangs in the neighbourhoods
+      of respondents. *p<.05 </small>
+      </p>
+    </div>
+
+    <br />
+
+    <div class="row">
+      <div class="col-sm">
+
+        <h4>Risk and Protective Factor Paradigm</h4>
+        <p>
+          Risk factors are those characteristics or symptoms that, if present, increase the likelihood that an individual
+          will be involved in deviant behaviour. On the other hand, protective factors are those characteristics or symptoms
+          that, if present, decrease the probability that an individual will be embroiled in problematic behaviour. While 
+          this risk and protective model has been applied for extensively to understand and develop health policy, it has 
+          only recently been utilized to achieve greater understanding of why people join gangs. 
+        </p>
+      
+        <p>
+          As a result, there is not much research on the association between risk and protective factors and gang membership.
+          However, anecdotal evidence points to the fact that membership is linked to the following risk factors:
+          neighbourhood social disorganization, neighbourhood levels of crime and drug use, lack of attachment to school, 
+          poor school performance, unemployment, poor family management, attachment to antisocial peers, and an individual’s
+          prior involvement in delinquency and drug use.
+        </p>
+      
+        <p>
+          The sole empirical study carried out thus far was done by Katz and Fox in 2010. They examined school aged-youth
+          in Trinidad and Tobago and found that gang involvement is associated with those who (1) have parents with
+          attitudes that favour antisocial behaviour, (2) live in neighbourhoods that are characterized by high mobility,
+          (3) live in neighbourhoods in which handguns are widely available, (4) have been involved in antisocial
+          behaviour from an early age, (5) have the intention to use drugs, (6) have antisocial peers, and (7) have
+          peers who use drugs. Furthermore, their study revealed that school-related risk factors were not, in the large,
+          significantly associated with gang involvement.
+        </p>
+      </div>
+
+    </div>
+
+    <br />
+    <br />
+
+    <div class="row">
+      <h3>Effects</h3>
+    </div>
+
+    <div class="col-md-4 col-sm-6"> 
+
+      <div class="thumbnail">
+        <img src="http://299q7htnn2842gfc12pl1fqt.wpengine.netdna-cdn.com/wp-content/uploads/2014/09/trafficking-in-cocaine1.jpg" alt="...">
+        <div class="caption">
+
+          <h5>
+              Organized crime commonly leads to drug trafficking. The resulting effects are numerous...
+          </h5>
+          <button type="button" class="btn btn-info btn-xs" data-toggle="collapse" data-target="#effect1">See More</button>
+          <div id="effect1" class="collapse">
+            <br />
+            <p>
+              It was noted by local officials that "the people who are
+              involved in moving drugs are often the same people who will use the same operation for many other illegal activities" such as money laundering and terrorism. 
+            </p>
+
+            <p>
+              Local drug use problems arise as a result of the fact that the traffickers are frequently paid in product and then sell to the domestic markets. This then leads to local criminality such as youth gangs, prostitution, and violent and property crime related to the drug markets.
+            </p>
+
+            <p>
+              The proliferation of firearms is also a by-product of drug trafficking.
+            </p>
+          </div>
+
+        </div>
+      </div>
+  </div>
+
+  <div class="col-md-4 col-sm-6"> 
+    <div class="thumbnail">
+      <img src="https://media2.wnyc.org/i/620/372/c/80/1/177220746.jpg" alt="...">
+      <div class="caption">
+
+        <h5>
+            Street gangs impact neighbourhood safety. But is it all negative?...
+        </h5>
+
+        <button type="button" class="btn btn-info btn-xs" data-toggle="collapse" data-target="#effect2">See More</button>
+        <div id="effect2" class="collapse">
+          <br />
+          <p>While it is understandable to assume that street gangs make neighbourhoods less safe, it may not be that clear-cut. As one expects, most residents surveyed stated that gangs made their communities less safe. However, a surprisingly large share of persons in Barbados (14.3 percent) and Jamaica (14.9 percent) stated that gangs made their neighbourhoods safer.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-md-4 col-sm-6"> 
+    <div class="thumbnail">
+      <img src="http://www.marketdigest.biz/wp-content/uploads/2009/11/air-travel-decline.jpg" alt="...">
+      <div class="caption">
+
+        <h5>
+            The economic performance of a country is decreased...
+        </h5>
+        <button type="button" class="btn btn-info btn-xs" data-toggle="collapse" data-target="#effect3">See More</button>
+        <div id="effect3" class="collapse">
+          <br />
+          <p>
+            The crimes and corruptive influence of gangs and organized crime accounts for this. Crime has the effect of diverting a country's limited resources away from productive sectors, which can fuel economic growth and human development in terms of education and the maintenance of physical infrastructure. Resources are instead aimed at crime prevention and control initiatives. 
+          </p>
+          <p>
+            Additionally, corruption serves to discourage positive corporate investment decisions, foreign investment, and private and public loan from abroad. Moreover, with many Caribbean countries dependant on tourism, crime and corruption limit the productivity of this sector.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
 </div>
 
-</div>
+
+<!--
+    <div ng-controller="graphController">
+      <zingchart id="chart-1" zc-values="myData" zc-type="bar" ></zingchart>
+  </div>
+-->
