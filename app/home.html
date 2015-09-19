@@ -1,3 +1,4 @@
+<!-- This is the header for the page which contains the main banner image as well as a title/subtitle. (adapted from the clean blog template.) -->
 <header class="intro-header" style="background-image: url('images/arrest.jpg')">
     <div class="container">
         <div class="row">
@@ -12,101 +13,71 @@
     </div>
 </header>
 
-<div id="main_content" class="container">
-    
-    <!-- Page Content -->
-    <div class="col-lg-8">
-        <a  name="services"></a>
-        <div class="content_layout_a">
+<!--
+  This is the content section of the page. Each row consists of a short paragraph and a picture.
+  You may add additional content by copying the layout to add a new row and adjust the content to your liking.
+  Note that to achieve the interlocking pictures styling, use home-content-layout-a and home-content-layout-b
+  one after the other.
+-->
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-5 col-sm-6">
-                        <hr class="section-heading-spacer">
-                        <div class="clearfix"></div>
-                        <h2 class="section-heading">Causes and Effects</h2>
-                        <p class="lead">This page seeks to inform readers about the causes of street gangs and the implications it has on the community, area and country by extension. </p>
-                    </div>
-                    <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                        <a class="btn" data-ui-sref="stats">
-                                <img src="images/crime.jpeg" class="img-responsive img-thumbnail" alt="Solutions Page" width="400" height ="400">
-                        </a>
-                    </div>
-                </div>
+<div class="home-content-layout-a">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 col-sm-6">
 
-            </div>
-            <!-- /.container -->
+        <hr class="home-content-linebreak">
+        <div class="clearfix"></div>
 
-        </div>
-        <!-- /.content-section-a -->
-
-        <div class="content_layout_b">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
-                        <hr class="section-heading-spacer">
-                        <div class="clearfix"></div>
-                        <h2 class="section-heading">Solutions</h2>
-                        <p class="lead">After reading about the causes and effects of crime, the solution page seeks to bring to light various ideas that could potentially reduce the presence of street gangs.</p>
-                    </div>
-                    <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                        <a class="btn" data-ui-sref="solutions">
-                                <img src="images/sols.jpeg" class="img-responsive img-thumbnail" alt="Solutions Page" width="400" height ="400">
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-            <!-- /.container -->
-
-        </div>
-        <!-- /.content-section-b -->
-
-        <div class="content_layout_a">
-
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-lg-5 col-sm-6">
-                        <hr class="section-heading-spacer">
-                        <div class="clearfix"></div>
-                        <h2 class="section-heading">Suggestions</h2>
-                        <p class="lead">This page was created with the intention of having users share their comments on street gangs and by extension criminal activity in their area. User names will be kept anonymous.</p>
-                    </div>
-                    <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                        <a class="btn" data-ui-sref="stats">
-                                <img src="images/suggestions-bg2.jpg" class="img-responsive img-thumbnail" alt="Cause And Effect Page" width="400" height ="400">
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-            <!-- /.container -->
-
-        </div>
-        <!-- /.content-section-a -->
-
-        <div class="content_layout_b">
-                <p>Recent Suggestions</p>
-                <div data-ng-controller="suggestionsCtrl" data-ng-init="initSuggestions();getSuggestions();getUsers();">
-                    
-                    <!-- use bootstrap 3 media objects to display suggestions -->
-                    <div class="media" data-ng-repeat="(key, value) in suggestions">
-                        <div class="media-left">
-                            <a href="#">
-                                <imgclass="media-object" ng-src="{{users[value.name].profileImageURL}}" alt="...">
-                            </a>
-                        </div>
-                        
-                        <div class="media-body">
-                            <h4 class="media-heading">{{users[value.name].name}}</h4>
-                            <p>{{value.text}}</p>
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-        </div>
+          <h2 class="home-content-heading">Gangs &amp; Organized Crime: <br> Causes and Effects</h2>
+        <p class="home-content-paragraph">
+          Check out the profound implications of street gangs and organized crime. You can gain some insight into why these problems exist.
+        </p>
+      </div>
+      <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+        <img class="img-responsive" src="images/causes.png" alt="test">
+      </div>
     </div>
-    
+  </div>
+</div>
+
+<!-- new row of content -->
+<div class="home-content-layout-b">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+        <hr class="home-content-linebreak">
+        <div class="clearfix"></div>
+
+        <h2 class="home-content-heading">Content 2</h2>
+        <p class="home-content-paragraph">
+          This is my content. Check it out. This is my content. Check it out. This is my content. Check it out.
+        </p>
+      </div>
+      <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+        <img class="img-responsive" src="images/solutions.png" alt="test">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- new row of content -->
+<div class="home-content-layout-b">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 col-sm-6">
+
+        <div class="home-content-linebreak"></div>
+        <div class="clearfix"></div>
+
+        <h2 class="home-content-heading">Content 3</h2>
+        <p class="home-content-paragraph">
+          This is my content. Check it out. This is my content. Check it out. This is my content. Check it out.
+          This is my content. Check it out. This is my content. Check it out. This is my content. Check it out.
+        </p>
+      </div>
+      <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+        <img class="img-responsive" src="images/suggestions.png" alt="test">
+      </div>
+    </div>
+  </div>
 </div>
