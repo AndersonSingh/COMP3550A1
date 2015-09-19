@@ -12,51 +12,35 @@
     </div>
 </header>
 
+<div class="container suggestion-area">
 
-<div class="container">
+  <!-- use bootstrap 3 media objects to dispaly suggestions on the page. (load all areas, since area is unknown) -->
+  <div data-ng-if="area == null" class="well">
+    <div data-ng-repeat="(key,value) in suggestions">
 
-
-  <div>
-
-    <div data-ng-if="area == null">
-
-      <div data-ng-repeat="(key, value) in suggestions">
-        <h3> Area: {{key}} <h3>
-        <!-- use bootstrap 3 media objects to display suggestions -->
-        <div class="media" data-ng-repeat="(key, value) in suggestions[key]">
-          <div class="media-left">
-            <a href="#">
-              <img class="media-object" ng-src="{{users[value.name].profileImageURL}}" alt="...">
-            </a>
-          </div>
-          <div class="media-body">
-            <h4 class="media-heading">{{users[value.name].name}}</h4>
-            <p>{{value.text}}</p>
+      <div class="row suggestion-block">
+        <h2>{{key}}</h2>
+      </div>
+      <div class="row suggestion-block" data-ng-repeat="(key,value) in suggestions[key]">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <div class="media" >
+            <div class="media-left media-top">
+              <a>
+                <img class="media-object" data-ng-src="{{users[value.name].profileImageURL}}" alt="Display Picture">
+              </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading suggestion">{{users[value.name].name}}</h4>
+              <p class="suggestion">{{value.text}}</p>
+            </div>
           </div>
         </div>
-
       </div>
-
-    </div>
-
-  <!-- use bootstrap 3 media objects to display suggestions -->
-<!--  <div class="panel panel-default" data-ng-if="area != null" class="media" data-ng-repeat="(key, value) in suggestions">
-    <div class="panel-body">
-    <div class="media-left">
-      <a href="#">
-        <img class="media-object" ng-src="{{users[value.name].profileImageURL}}" alt="...">
-      </a>
-    </div>
-    <div class="media-body">
-      <h4 class="media-heading">{{users[value.name].name}}</h4>
-      <p>{{value.text}}</p>
     </div>
   </div>
-  </div>
--->
 
-  <!-- use bootstrap 3 media objects to display suggestions on the page. -->
-  <div class="well">
+  <!-- use bootstrap 3 media objects to display suggestions on the page. (when the area is known. ) -->
+  <div data-ng-if="area != null" class="well">
     <div class="row suggestion-block" data-ng-repeat="(key,value) in suggestions">
       <div class="col-sm-12 col-md-12 col-lg-12">
         <div class="media" >
@@ -74,7 +58,7 @@
     </div>
   </div>
 
-
+  <!-- this is a form which will be used to submit a suggestion -->
   <form class="form-horizontal">
     <fieldset>
       <!-- Textarea -->
@@ -83,7 +67,6 @@
           <textarea ng-model="suggestion" class="form-control" id="suggestion" name="suggestion">Enter your suggestion on how to hanlde organized crime and gangs in your area. </textarea>
         </div>
       </div>
-
       <!-- Button -->
       <div class="form-group">
         <div class="col-md-12">
@@ -92,7 +75,4 @@
       </div>
     </fieldset>
   </form>
-
-
-  </div>
 </div>
