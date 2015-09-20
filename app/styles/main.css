@@ -1,27 +1,100 @@
-body {
-  font-family: 'Lora', 'Times New Roman', serif;
-  font-size: 20px;
-  color: #404040;
+/*
+  Styling for the suggestions page.
+*/
+
+.suggestion-area{
+  margin-top: 50px;
 }
 
-h1,h2,h3,h4,h5,h6 {
+.suggestion-block{
+  margin-bottom: 10px;
+  padding: 30px 20px;
+  border-bottom: 3px solid white;
+}
+
+h4,p.suggestion{
+  font-family: "Lucida Console", Monaco, monospace;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/*
+  This css is used for the home page layout. It's adapted from the startbootstrap landing page.
+  If anyone needs to make edits, refer to the original template design on the website.
+*/
+
+.home-content-layout-a {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+}
+
+.home-content-layout-b {
+    padding: 50px 0;
+    border-top: 1px solid #A8A8A8;
+    border-bottom: 1px solid #A8A8A8;
+}
+
+
+.home-content-linebreak{
+    float: left;
+    width: 200px;
+    border-top: 3px solid #404040;
+}
+
+.home-content-heading{
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 30px;
   font-weight: 800;
-}
-a {
-  color: #404040;
-}
-a:hover,
-a:focus {
-  color: #0085a1;
+  text-align: left;
+  margin-bottom: 30px;
 }
 
-hr.small {
-  max-width: 100px;
-  margin: 15px auto;
-  border-width: 4px;
-  border-color: white;
+.home-content-paragraph{
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  text-align: justify;
 }
+
+/* tranisition for text area. */
+ #SuggestionArea:hover{
+  width: 475px;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+}
+
+
+#login-list-notes{
+  text-align: center;
+  border-style: solid;
+    border-width: 1px;
+}
+
+#chart-1, #chart-2{
+  display:block;
+}
+
+@media screen and (max-width: 500px) {
+    body{
+        font-size: 15px;
+    }
+}
+
+/* carousel styling. */
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
+
+.carousel-indicators li {
+  background-color: #000000;
+}
+.carousel-indicators .active {
+  background-color: #FF0000;
+}
+
+
+/* nav bar css classes */
+
 .navbar-custom {
   position: absolute;
   top: 0;
@@ -109,6 +182,49 @@ hr.small {
     transform: translate3d(0, 100%, 0);
   }
 }
+
+/* link styling */
+a {
+  color: #404040;
+}
+a:hover,
+a:focus {
+  color: #0085a1;
+}
+
+/* footer styling */
+footer {
+  padding: 50px 0 65px;
+}
+footer .list-inline {
+  margin: 0;
+  padding: 0;
+}
+footer .copyright {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+/* header styling / general styling. */
+body {
+  font-family: 'Lora', 'Times New Roman', serif;
+  font-size: 20px;
+  color: #404040;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 800;
+}
+
+hr.small {
+  max-width: 100px;
+  margin: 15px auto;
+  border-width: 4px;
+  border-color: white;
+}
+
 .intro-header {
   background-color: #808080;
   background: no-repeat center center;
@@ -185,111 +301,4 @@ hr.small {
   .intro-header .post-heading .subheading {
     font-size: 30px;
   }
-}
-
-
-footer {
-  padding: 50px 0 65px;
-}
-footer .list-inline {
-  margin: 0;
-  padding: 0;
-}
-footer .copyright {
-  font-size: 14px;
-  text-align: center;
-  margin-bottom: 0;
-}
-
- #SuggestionArea:hover{
-  width: 475px;
-  transition-duration: 1s;
-  transition-timing-function: linear;
-}
-
-/*
-  This css is used for the home page layout. It's adapted from the startbootstrap landing page.
-  If anyone needs to make edits, refer to the original template design on the website.
-*/
-
-.home-content-layout-a {
-    padding: 50px 0;
-    background-color: #f8f8f8;
-}
-
-.home-content-layout-b {
-    padding: 50px 0;
-    border-top: 1px solid #A8A8A8;
-    border-bottom: 1px solid #A8A8A8;
-}
-
-
-.home-content-linebreak{
-    float: left;
-    width: 200px;
-    border-top: 3px solid #404040;
-}
-
-.home-content-heading{
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 30px;
-  font-weight: 800;
-  text-align: left;
-  margin-bottom: 30px;
-}
-
-.home-content-paragraph{
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 20px;
-  font-weight: 300;
-  text-align: justify;
-}
-
- #SuggestionArea:hover{
-  width: 475px;
-  transition-duration: 1s;
-  transition-timing-function: linear;
-}
-
-.suggestion-area{
-  margin-top: 50px;
-}
-
-.suggestion-block{
-  margin-bottom: 10px;
-  padding: 30px 20px;
-  border-bottom: 3px solid white;
-}
-
-h4,p.suggestion{
-  font-family: "Lucida Console", Monaco, monospace;
-  line-height: 1.6;
-  text-align: justify;
-}
-
-#login-list-notes{
-  text-align: center;
-  border-style: solid;
-    border-width: 1px;
-}
-
-#chart-1, #chart-2{
-  display:block;
-}
-
-@media screen and (max-width: 500px) {
-    body{
-        font-size: 15px;
-    }
-}
-=======
-.carousel-inner > .item > img {
-    margin: 0 auto;
-}
-
-.carousel-indicators li {
-  background-color: #000000;
-}
-.carousel-indicators .active {
-  background-color: #FF0000;
 }
