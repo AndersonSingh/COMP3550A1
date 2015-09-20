@@ -31,10 +31,20 @@ Taxonomy
 
 Place Content Here.
 
-![SiteMap] (app/images/sitemap.jpg)
 
 Site Map
 ----------------------------
+
+![SiteMap](app/images/sitemap.jpg)
+
+
+Low Fidelity Prototypes
+----------------------------
+
+![Home Page PC Design](app/images/prototype-01.png)
+
+![Home Page Mobile Design](app/images/prototype-02.png)
+
 
 
 Wow Factors
@@ -44,13 +54,19 @@ Wow Factors
 2. Interactive Statistics Charts.
 3. Post/View Crime Suggestions Based On Current Location. (Web 2.0)
 
-Low Fidelity Prototypes
-----------------------------
-
-<img src="app/images/prototype-01.png">
-
-<img src="app/images/prototype-02.png">
-
 
 Bonus Mark Justification
 -------------
+
+Place Content Here.
+
+
+
+JSLint Validation
+-------------
+
+The main.js file was validated on JSLint with "Tolerate Messy White Space Option" selected.
+
+Globals
+
+angular, Firebase, console, google, alert
