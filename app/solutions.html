@@ -3,7 +3,7 @@
   A background image accompanied by all the links present within the site is present.
 -->
 
-<header data-ng-init="initSuggestions();" class="intro-header" style="background-image: url('images/sols.jpeg')">
+<header data-ng-init="initSuggestions();" class="intro-header" style="background-image: url('images/sols.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -171,8 +171,9 @@
 			<!--
 			  The following lines of code show the html code for the first graph. It refers to a controller in the javascript file while takes over the execution.
 			-->
+			
 			<div ng-controller="graphControllerSol2">
-		    	<zingchart id="chart-2" zc-json="myObj2" zc-values="myValues" zc-render="myRender" ></zingchart>
+		    	<div zingchart id="chart-2" zc-json="myObj2" zc-values="myValues" zc-width="100%" zc-height="100%" ></div>
 		    </div>
 		    <br>
 			<p>
