@@ -58,10 +58,6 @@
 
 /*This controller is responsible for generating the charts.*/
 
-.controller("graphController",["$scope", function($scope){
-      $scope.myData = [1,4,5,5,10];
-}])
-
 .controller("graphControllerSol1",["$scope", function($scope){
   $scope.myObj = {
   "type": "bar3d",
@@ -140,6 +136,7 @@
     width:  "100%",
     height: 'auto'
   };
+
 }])
 
 .controller("graphControllerSol2",["$scope", function($scope){
