@@ -392,3 +392,82 @@
   };
 }]);
 }());
+
+/*Checks for the @ symbol in a given email address*/ 
+function emailValidation(email){
+      var hasSymbol = false;
+      var emailLen = email.length;
+      for(var i = 0; i < emailLen; i += 1){
+        var character = email.charAt(i);
+        if(character === "@"){
+          hasSymbol = true;
+        }
+      }
+      
+      if(hasSymbol == false){
+        alert("Invalid email");
+      }
+      
+    }
+    
+    var user = {
+      email:"",
+      password:"",
+      passwordrepeat:""
+    };
+    // Checks is password entered is strong i.e has a length of 10 and atleast one capital and common letter, a number and a symbol
+function isPasswordStrong(password) {
+	 var hasCapital = false;
+	 var hasCommon = false;
+	 var hasNumber = false;
+	 var hasSymbol = false;
+ 	 var minLength = 10;
+	 var passwordLen = password.length;
+	 if(passwordLen == minLength){
+		  for(var idx = 0; idx < passwordLen; idx += 1){
+			 var character = password.charAt(idx);
+			 if(isLetter(character)){
+			   	if(isCapital(character)){
+				  	hasCapital = true;
+				  }else{
+					 hasCommon = true;
+				  }
+			 }else if(isNumber(character)){
+			   	hasNumber = true;
+			 }
+			 else{
+			   	hasSymbol = true;
+			 }
+		  }
+		
+		return hasCommon && hasCapital && hasNumber && hasSymbol;
+	}
+	
+	
+	return false;
+
+}
+    //Check to validate if the password entered by a user registering is the same as the repeated password
+function passwordValidation(user){
+    var pass1 = user.password;
+    var pass2 = user.passwordrepeat;
+      
+    var pass1Len = user.password.Length;
+    var pass2Len = user.passwordrepeat.Length;
+      
+    if(pass1Len == pass2Len){
+      for(var i = 0; i < pass1Len; i += 1){
+        var char1 = pass1.chartAt(i);
+        var char2 = pass2.chartAt(i);
+        if(char1 !== char2){
+          alert("Passwords don't match");
+          return false
+        }
+      }
+    }
+    else{
+      return false;
+    }
+      
+    return true;
+  }
