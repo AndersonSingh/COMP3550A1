@@ -25,6 +25,18 @@ Alternatively you may run:
 > **Command:**
 >- bower install
 
+
+Taxonomy
+----------------------------
+
+Place Content Here.
+
+![SiteMap] (app/images/sitemap.jpg)
+
+Site Map
+----------------------------
+
+
 Wow Factors
 -------------
 
