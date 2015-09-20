@@ -219,84 +219,141 @@
 */
 
 .controller("registerCtrl",["$scope", function($scope){
-
+"use strict";
   $scope.user = {};
-
+ 
+  $scope.isNumber = function(str) {
+    console.log("Is number?");
+    return !(isNaN(parseInt(str)));
+  };
+  
+  console.log("hello");
+  console.log($scope.isNumber("m"));
+  
+ 
+  $scope.isLetter = function(str) {
+    console.log("Is letter?");
+    return str.match(/[a-z]/i) !== null;
+  };
+ console.log("is letter");
+ console.log($scope.isLetter("_"));
+ 
+  $scope.isCapital = function(str) {
+    if($scope.isLetter(str) && str.toUpperCase() === str) {
+                  console.log("is capital")
+                  return true;
+    }
+      console.log("not capital");
+      return false;
+  };
+  
+  console.log($scope.isCapital("m"));
+ 
   $scope.validatePassword = function(user){
       var pass1 = user.password;
       var pass2 = user.passwordrepeat;
-
+ 
       var pass1Len = user.password.length;
       var pass2Len = user.passwordrepeat.length;
-
-
-      if(pass1Len == pass2Len){
-        for(var i = 0; i < pass1Len; i += 1){
-          var char1 = pass1.charAt(i);
-          var char2 = pass2.charAt(i);
+ 
+ 
+      if(pass1Len === pass2Len){
+        var i = 0;
+        var char1 = "";
+        var char2 = "";
+        for(i = 0; i < pass1Len; i += 1){
+          char1 = pass1.charAt(i);
+          char2 = pass2.charAt(i);
           if(char1 !== char2){
-            return false
+            console.log("false");
+            return false;
           }
         }
       }
       else{
+        console.log("false");
         return false;
       }
-
+      console.log("true");
       return true;
     };
-
-    $scope.passwordStrength =  function(password) {    // Checks is password entered is strong i.e has a length of 10 and atleast one capital and common letter, a number and a symbol
-    	 var hasCapital = false;
-    	 var hasCommon = false;
-    	 var hasNumber = false;
-    	 var hasSymbol = false;
-     	 var minLength = 10;
-    	 var passwordLen = password.length;
-    	 if(passwordLen == minLength){
-    		  for(var idx = 0; idx < passwordLen; idx += 1){
-    			 var character = password.charAt(idx);
-    			 if(isLetter(character)){
-    			   	if(isCapital(character)){
-    				  	hasCapital = true;
-    				  }else{
-    					 hasCommon = true;
-    				  }
-    			 }else if(isNumber(character)){
-    			   	hasNumber = true;
-    			 }
-    			 else{
-    			   	hasSymbol = true;
-    			 }
-    		  }
-
-    		return hasCommon && hasCapital && hasNumber && hasSymbol;
-    	}
-
-
-    	return false;
-
+    
+    var userMikkel = {
+      email:"kel@hayes.com",
+      password:"Hydr0_Thunder",
+      passwordrepeat:"Hydr0_Thunder"
     };
-
+    
+    console.log($scope.validatePassword(userMikkel));
+ 
+    $scope.passwordStrength =  function(password) {    // Checks is password entered is strong i.e has a length of 10 and atleast one capital and common letter, a number and a symbol
+         var hasCapital = false;
+         console.log(hasCapital);
+         var hasCommon = false;
+         console.log(hasCommon);
+         var hasNumber = false;
+         console.log(hasNumber);
+         var hasSymbol = false;
+         console.log(hasSymbol);
+         var minLength = 10;
+         var passwordLen = password.length;
+         console.log(passwordLen);
+       var character = "";
+       var idx;
+         if(passwordLen === minLength){
+                  for(idx = 0; idx < passwordLen; idx += 1){
+                         character = password.charAt(idx);
+                         if($scope.isLetter(character)){
+                                if($scope.isCapital(character)){
+                                        hasCapital = true;
+                                  }else{
+                                         hasCommon = true;
+                                  }
+                         }else if($scope.isNumber(character)){
+                                hasNumber = true;
+                         }
+                         else{
+                                hasSymbol = true;
+                         }
+                  }
+ 
+                return hasCommon && hasCapital && hasNumber && hasSymbol;
+        }
+ 
+        console.log(hasCommon +" "+hasCapital+" "+hasNumber+" "+hasSymbol);
+        return false;
+ 
+    };
+    
+    console.log($scope.passwordStrength(userMikkel.password));
+ 
     $scope.emailValidation = function(email){
           var hasSymbol = false;
           var emailLen = email.length;
-          for(var i = 0; i < emailLen; i += 1){
-            var character = email.charAt(i);
+          var i;
+          var character = "";
+          for(i = 0; i < emailLen; i += 1){
+            character = email.charAt(i);
             if(character === "@"){
+              console.log(hasSymbol);
               hasSymbol = true;
             }
           }
-
+          console.log("failed");
+          console.log(hasSymbol);
           return hasSymbol;
-
-        }
-
+ 
+        };
+        
+        console.log($scope.emailValidation(userMikkel.email));
+        
+        console.log("test");
+        console.log($scope.validatePassword(userMikkel)+" "+$scope.passwordStrength(userMikkel.password)+" "+$scope.emailValidation(userMikkel.email)); 
   /* this function uses firebase simple email and password method to create a user account. */
   $scope.registerUser = function(){
-
+ 
     if($scope.validatePassword($scope.user) === true && $scope.passwordStrength($scope.user.password) === true && $scope.emailValidation($scope.user.email) === true){
-
+ 
       var ref = new Firebase("https://comp3550a1.firebaseio.com");
       ref.createUser($scope.user,function(error, userData){
         if(error){
@@ -304,14 +361,14 @@
         }
         else{
           alert("Successfully created user account. You may now login.");
-  				console.log(userData);
+                                console.log(userData);
         }
       });
-
+ 
     }
-
+ 
   };
-
+ 
 }])
 
 /*
