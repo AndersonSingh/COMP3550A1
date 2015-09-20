@@ -59,152 +59,135 @@
 /*This controller is responsible for generating the charts.*/
 
 .controller("graphControllerSol1",["$scope", function($scope){
+  $scope.myValues = [[57.3,65.4,62.5,59.4,62.1,52.7,59.1],[14.3,16.7,14.3,11.6,15.5,4.6,11.9]];
   $scope.myObj = {
-  "type": "bar3d",
-  "title": {
-  	"font-size":"18px",
-    "text": "Confidence in Police to Control Crime"
+  type: "bar3d",
+  title:{
+  	fontSize:18,
+    text: "Confidence in Police to Control Crime"
   },
-  "subtitle": {
-  	"font-size":"16px",
-    "text": "Year - 2010 (11,155 Participants)"
+  subtitle: {
+  	fontSize:16,
+    text: "Year - 2010 (11,155 Participants)"
   },
-  "scaleX": {
-    "values":["Antigua &<br>Barbuda","Barbados","Guyana","Jamaica","St. Lucia",
+  scaleX: {
+    values:["Antigua &<br>Barbuda","Barbados","Guyana","Jamaica","St. Lucia",
         "Suriname","Trinidad &<br>Tobago"],
-    "items-overlap":true,
-    "item":{
-    	"font-size":"14px",
-        "font-angle":-45,
-        "auto-align":true
+    itemsOverlap:true,
+    item:{
+    	fontSize:14,
+        fontAngle:-45,
+        autoAlign:true
     },
-    "guide":{
-    "line-color":"red",
-    "line-width":2
+    guide:{
+    lineColor:"red",
+    lineWidth:2
     }
   },
-  "scaleY": {
-    "label": {
-      "text": "Percent",
-      "font-size":"16px"
+  scaleY: {
+    label: {
+      text: "Percent",
+      fontSize:16
+    },
+    item:{
+        fontSize:14,
+        autoAlign:true
     }
   },
-  "legend": {},
-  "series": [
+  tooltip:{
+      text:"%v %",
+      fontSize:20
+  },
+  legend: {},
+  series: [
     {
-      "text": "Some Confidence",
-      "lineColor": "#9e9e9e",
-      "backgroundColor": "#9e9e9e",
-      "borderColor": "#9e9e9e",
-      "marker": {
-        "borderWidth": 0,
-        "backgroundColor": "#9e9e9e"
-      },
-      "values": [
-        57.3,
-        65.4,
-        62.5,
-        59.4,
-        62.1,
-        52.7,
-        59.1
-      ]
+      text: "Some Confidence",
+      lineColor: "#9e9e9e",
+      backgroundColor: "#9e9e9e",
+      borderColor: "#9e9e9e",
+      marker: {
+        borderWidth: 0,
+        backgroundColor: "#9e9e9e"
+      }
     },
     {
-      "text": "Great Confidence",
-      "lineColor": "#2196F3",
-      "backgroundColor": "#2196F3",
-      "borderColor": "#2196F3",
-      "marker": {
-        "borderWidth": 0,
-        "backgroundColor": "#2196F3"
+      text: "Great Confidence",
+      lineColor: "#2196F3",
+      backgroundColor: "#2196F3",
+      borderColor: "#2196F3",
+      marker: {
+        borderWidth: 0,
+        backgroundColor: "#2196F3"
       },
-      "values": [
-        14.3,
-        16.7,
-        14.3,
-        11.6,
-        15.5,
-        4.6,
-        11.9
-      ]
     }
   ]
   };
 
   $scope.myRender = {
-    width:  "100%",
-    height: 'auto'
+    width:"100%",
+    height:'auto',
   };
 
 }])
 
 .controller("graphControllerSol2",["$scope", function($scope){
-
-    $scope.myObj2 = {
-
-  "type": "line",
-  "title": {
-    "font-size":"18px",
-    "text": "Social Intervention as a Means of Crime Control"
+  $scope.myValues=[87.1,91.7,92.5,87.7,88.8];
+      
+  $scope.myObj2 = {
+  type: "line",
+  title: {
+    fontSize:18,
+    text: "Social Intervention as a Means of Crime Control"
   },
-  "subtitle": {
-    "font-size":"16px",
-    "text": "Year - 2010 (11,155 Participants)"
+  subtitle: {
+    fontSize:16,
+    text: "Year - 2010 (11,155 Participants)"
   },
-  "scaleX": {
-    "values":["Education","Youth<br>Programmes","Job<br>Creation","Urban<br>Areas",
+  scaleX: {
+    values:["Education","Youth<br>Programmes","Job<br>Creation","Urban<br>Areas",
         "Reducing<br>Poverty"],
-    "items-overlap":true,
-    "item":{
-        "font-size":"14px",
-        "auto-align":true
+    itemsOverlap:true,
+    item:{
+        fontSize:14,
+        autoAlign:true
     },
-    "guide":{
-    "line-color":"red",
-    "line-width":2
+    guide:{
+      lineColor:"red",
+      lineWidth:2
     }
   },
-  "scaleY": {
-    "values":"80:100:2",
-    "label": {
-      "text": "Percent",
-      "padding-left":"25px",
-      "font-size":"16px"
+  scaleY: {
+    values:"80:100:2",
+    label: {
+      text: "Percent",
+      paddingLeft:"25px",
+      fontSize:16
     },
-    "item":{
-        "font-size":"14px",
-        "auto-align":true
+    item:{
+        fontSize:14,
+        autoAlign:true
     },
-    "guide":{
-    "line-color":"red",
-    "line-width":2
+    guide:{
+    lineColor:"red",
+    lineWidth:2
     }
   },
-  "tooltip":{
-      "text":"%v %",
-      "font-size":"16px"
+  tooltip:{
+      text:"%v %",
+      fontSize:20
   },
-  "legend": {},
-  "series": [
+  legend: {},
+  series: [
     {
-      "text": "Gov't Investment",
-      "lineColor": "#4caf50",
-      "backgroundColor": "#4caf50",
-      "borderColor": "#4caf50",
-      "marker": {
-        "borderWidth": 0,
-        "backgroundColor": "#4caf50"
-      },
-      "values": [
-        87.1,
-        91.7,
-        92.5,
-        87.7,
-        88.8
-      ]
+      text: "Gov't Investment",
+      lineColor: "#4caf50",
+      backgroundColor: "#4caf50",
+      borderColor: "#4caf50",
+      marker: {
+        borderWidth: 0,
+        backgroundColor: "#4caf50"
     },
-
+  },
   ]
   };
 
