@@ -199,6 +199,13 @@ a:focus {
   color: #0085a1;
 }
 
+/* table styling */
+
+th {
+    background-color: black;
+    color: white;
+}
+
 /* footer styling */
 footer {
   padding: 50px 0 65px;
