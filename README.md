@@ -29,6 +29,8 @@ Alternatively you may run:
 Taxonomy
 ----------------------------
 
+![Website Taxonomy](app/images/Taxonomy.png)
+
 Place Content Here.
 
 
