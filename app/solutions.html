@@ -138,9 +138,13 @@
 			<!--
 			  The following lines of code show the html code for the first graph. It refers to a controller in the javascript file while takes over the execution.
 			-->
+			
 			<div ng-controller="graphControllerSol1">
-	    		<zingchart id="chart-1" zc-json="myObj" zc-render="myRender" ></zingchart>
+	    		<zingchart id="chart-1" zc-json="myObj" zc-values="myValues" zc-render="myRender" ></zingchart>
 			</div>
+			
+
+
 		</div>
 	</div>
 
@@ -168,7 +172,7 @@
 			  The following lines of code show the html code for the first graph. It refers to a controller in the javascript file while takes over the execution.
 			-->
 			<div ng-controller="graphControllerSol2">
-		    	<zingchart id="chart-2" zc-json="myObj2" zc-render="myRender" ></zingchart>
+		    	<zingchart id="chart-2" zc-json="myObj2" zc-values="myValues" zc-render="myRender" ></zingchart>
 		    </div>
 		    <br>
 			<p>
