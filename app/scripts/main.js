@@ -207,7 +207,8 @@
 
   $scope.myRender = {
       width:  "100%",
-      height: 'auto'
+      height: 'auto',
+      autoResize: true
   };
 }])
 
