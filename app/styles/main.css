@@ -316,3 +316,7 @@ hr.small {
     font-size: 30px;
   }
 }
+#chart-2 ,#chart-1{
+  height:500px;
+  width:100%;
+}
