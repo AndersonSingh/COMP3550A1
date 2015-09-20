@@ -118,7 +118,7 @@
       marker: {
         borderWidth: 0,
         backgroundColor: "#2196F3"
-      },
+      }
     }
   ]
   };
