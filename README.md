@@ -45,6 +45,17 @@ Low Fidelity Prototypes
 
 ![Home Page Mobile Design](app/images/prototype-02.png)
 
+![Login/Register Page PC Design](app/images/prototype2-01.png)
+
+![Login/Register Mobile Design](app/images/prototype2-02.png)
+
+![Suggestions Page PC Design](app/images/prototype3-01.png)
+
+![Suggestions Page Mobile Design](app/images/prototype3-02.png)
+
+![Content Pages PC Design](app/images/prototype4-01.png)
+
+![Content Pages Mobile Design](app/images/prototype4-02.png)
 
 
 Wow Factors
