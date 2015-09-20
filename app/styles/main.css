@@ -1,4 +1,11 @@
 /*
+  list styling.
+*/
+
+ol li{
+  list-style-type : lower-alpha;
+}
+/*
   Styling for the suggestions page.
 */
 
