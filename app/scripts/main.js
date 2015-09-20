@@ -90,7 +90,7 @@
       fontSize:16
     },
     item:{
-        fontSize:14,
+        fontSize:16,
         autoAlign:true
     }
   },
@@ -98,7 +98,13 @@
       text:"%v %",
       fontSize:20
   },
-  legend: {},
+  legend:{
+        minimize:1,
+        header : {
+            text: 'Confidence Levels',
+            backgroundCcolor: 'silver'
+         }
+  },
   series: [
     {
       text: "Some Confidence",
@@ -161,7 +167,7 @@
     values:"80:100:2",
     label: {
       text: "Percent",
-      paddingLeft:"25px",
+      paddingLeft:17,
       fontSize:16
     },
     item:{
@@ -177,7 +183,14 @@
       text:"%v %",
       fontSize:20
   },
-  legend: {},
+  legend: {
+        minimize:1,
+        marginTop :60,
+        header : {
+            text: 'Government Investment',
+            backgroundCcolor: 'silver'
+         }
+       },
   series: [
     {
       text: "Gov't Investment",
