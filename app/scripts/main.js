@@ -200,8 +200,8 @@
       marker: {
         borderWidth: 0,
         backgroundColor: "#4caf50"
-    },
-  },
+    }
+  }
   ]
   };
 
@@ -219,88 +219,77 @@
 */
 
 .controller("registerCtrl",["$scope", function($scope){
-"use strict";
+
   $scope.user = {};
- 
+
   $scope.isNumber = function(str) {
-    console.log("Is number?");
     return !(isNaN(parseInt(str)));
   };
-  
-  console.log("hello");
-  console.log($scope.isNumber("m"));
-  
- 
+
   $scope.isLetter = function(str) {
-    console.log("Is letter?");
     return str.match(/[a-z]/i) !== null;
   };
- console.log("is letter");
- console.log($scope.isLetter("_"));
- 
+
   $scope.isCapital = function(str) {
     if($scope.isLetter(str) && str.toUpperCase() === str) {
-                  console.log("is capital")
                   return true;
     }
-      console.log("not capital");
       return false;
   };
-  
-  console.log($scope.isCapital("m"));
- 
+
+  $scope.isEmpty = function(str) {
+    return (!str || 0 === str.length);
+  };
+
   $scope.validatePassword = function(user){
       var pass1 = user.password;
       var pass2 = user.passwordrepeat;
- 
-      var pass1Len = user.password.length;
-      var pass2Len = user.passwordrepeat.length;
- 
- 
-      if(pass1Len === pass2Len){
-        var i = 0;
-        var char1 = "";
-        var char2 = "";
-        for(i = 0; i < pass1Len; i += 1){
-          char1 = pass1.charAt(i);
-          char2 = pass2.charAt(i);
-          if(char1 !== char2){
-            console.log("false");
-            return false;
+
+      if(!$scope.isEmpty(pass1) || !$scope.isEmpty(pass2)){
+
+        var pass1Len = user.password.length;
+        var pass2Len = user.passwordrepeat.length;
+
+
+        if(pass1Len === pass2Len){
+          var i = 0;
+          var char1 = "";
+          var char2 = "";
+          for(i = 0; i < pass1Len; i += 1){
+            char1 = pass1.charAt(i);
+            char2 = pass2.charAt(i);
+            if(char1 !== char2){
+              return false;
+            }
           }
         }
+        else{
+          return false;
+        }
+        return true;
+
       }
       else{
-        console.log("false");
         return false;
       }
-      console.log("true");
-      return true;
+
     };
-    
-    var userMikkel = {
-      email:"kel@hayes.com",
-      password:"Hydr0_Thunder",
-      passwordrepeat:"Hydr0_Thunder"
-    };
-    
-    console.log($scope.validatePassword(userMikkel));
- 
+
+
     $scope.passwordStrength =  function(password) {    // Checks is password entered is strong i.e has a length of 10 and atleast one capital and common letter, a number and a symbol
+
+        if(!$scope.isEmpty(password)){
+
+
          var hasCapital = false;
-         console.log(hasCapital);
          var hasCommon = false;
-         console.log(hasCommon);
          var hasNumber = false;
-         console.log(hasNumber);
          var hasSymbol = false;
-         console.log(hasSymbol);
          var minLength = 10;
          var passwordLen = password.length;
-         console.log(passwordLen);
        var character = "";
        var idx;
-         if(passwordLen === minLength){
+         if(passwordLen >= minLength){
                   for(idx = 0; idx < passwordLen; idx += 1){
                          character = password.charAt(idx);
                          if($scope.isLetter(character)){
@@ -316,18 +305,22 @@
                                 hasSymbol = true;
                          }
                   }
- 
+
                 return hasCommon && hasCapital && hasNumber && hasSymbol;
         }
- 
-        console.log(hasCommon +" "+hasCapital+" "+hasNumber+" "+hasSymbol);
         return false;
- 
+      }
+
+      return false;
+
     };
-    
-    console.log($scope.passwordStrength(userMikkel.password));
- 
+
+
     $scope.emailValidation = function(email){
+
+        if($scope.isEmpty(email)){
+          return false;
+        }
           var hasSymbol = false;
           var emailLen = email.length;
           var i;
@@ -335,25 +328,21 @@
           for(i = 0; i < emailLen; i += 1){
             character = email.charAt(i);
             if(character === "@"){
-              console.log(hasSymbol);
               hasSymbol = true;
             }
           }
-          console.log("failed");
-          console.log(hasSymbol);
           return hasSymbol;
- 
+
         };
-        
-        console.log($scope.emailValidation(userMikkel.email));
-        
-        console.log("test");
-        console.log($scope.validatePassword(userMikkel)+" "+$scope.passwordStrength(userMikkel.password)+" "+$scope.emailValidation(userMikkel.email)); 
+
   /* this function uses firebase simple email and password method to create a user account. */
   $scope.registerUser = function(){
- 
+
+    console.log($scope.validatePassword($scope.user));
+    console.log($scope.passwordStrength($scope.user.password));
+    console.log($scope.emailValidation($scope.user.email));
     if($scope.validatePassword($scope.user) === true && $scope.passwordStrength($scope.user.password) === true && $scope.emailValidation($scope.user.email) === true){
- 
+
       var ref = new Firebase("https://comp3550a1.firebaseio.com");
       ref.createUser($scope.user,function(error, userData){
         if(error){
@@ -364,11 +353,13 @@
                                 console.log(userData);
         }
       });
- 
+
     }
- 
+    else{
+      alert("An error occurred.");
+    }
   };
- 
+
 }])
 
 /*
@@ -535,44 +526,26 @@
 
   };
 }]);
+
+
+
 }());
 
-/*Checks for the @ symbol in a given email address*/
-function emailValidation(email){
-      var hasSymbol = false;
-      var emailLen = email.length;
-      for(var i = 0; i < emailLen; i += 1){
-        var character = email.charAt(i);
-        if(character === "@"){
-          hasSymbol = true;
-        }
-      }
-
-      if(hasSymbol == false){
-        alert("Invalid email");
-      }
-
-    }
-
-    var user = {
-      email:"",
-      password:"",
-      passwordrepeat:""
-    };
 
 function loadXMLDoc()
 {
+  "use strict";
 var xmlhttp;
 
 xmlhttp=new XMLHttpRequest();
 
 xmlhttp.onreadystatechange=function()
   {
-  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+  if (xmlhttp.readyState===4 && xmlhttp.status===200)
     {
     document.getElementById("ajax_use").innerHTML=xmlhttp.responseText;
     }
-  }
+  };
 xmlhttp.open("GET","ajax/ajax_here.txt",true);
 xmlhttp.send();
 }
