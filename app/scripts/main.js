@@ -24,12 +24,13 @@
 	    .state("register", {
 	      url: "/register",
 	      templateUrl: "register.html",
-	      controller: "registerCtrl"
+	      //controller: "registerCtrl"
 	    })
 
 	    .state("login", {
 	      url: "/login",
-	      templateUrl: "login.html"
+	      templateUrl: "login.html",
+        controller: "loginCtrl"
 	    })
 
 	    .state("suggestions", {
@@ -372,12 +373,29 @@
 .controller("loginCtrl",["$scope", "AuthService", function($scope, AuthService){
 
   $scope.user = {};
-
-  /* this function will call on firebase to authenicate a user using a custom service. */
-  $scope.loginUser = function(){
-    AuthService.setAuth($scope.user);
+  
+  $scope.isEmpty = function(str) {
+    return (!str || 0 === str.length);
   };
 
+  /* this function will call on firebase to authenicate a user using a custom service once the username and password fields are present. */
+
+  $scope.loginUser = function(){
+    var userResult = $scope.isEmpty($scope.user.email);
+    var passResult = $scope.isEmpty($scope.user.password);
+
+    if( userResult==false && passResult==false){
+      AuthService.setAuth($scope.user);
+    }
+    else{
+      if(userResult==true){
+        alert("UserName field is blank.");
+      }
+      if(passResult==true){
+        alert("Password field is blank.");
+      }
+    }
+  };
 
 }])
 
