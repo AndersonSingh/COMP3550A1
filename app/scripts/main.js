@@ -118,7 +118,7 @@
       marker: {
         borderWidth: 0,
         backgroundColor: "#2196F3"
-      },
+      }
     }
   ]
   };
@@ -488,3 +488,20 @@ function emailValidation(email){
       password:"",
       passwordrepeat:""
     };
+
+function loadXMLDoc()
+{
+var xmlhttp;
+
+xmlhttp=new XMLHttpRequest();
+
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("ajax_use").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("GET","ajax/ajax_here.txt",true);
+xmlhttp.send();
+}
