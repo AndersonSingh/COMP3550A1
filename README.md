@@ -25,6 +25,39 @@ Alternatively you may run:
 > **Command:**
 >- bower install
 
+
+Taxonomy
+----------------------------
+
+Place Content Here.
+
+
+Site Map
+----------------------------
+
+![SiteMap](app/images/sitemap.jpg)
+
+
+Low Fidelity Prototypes
+----------------------------
+
+![Home Page PC Design](app/images/prototype-01.png)
+
+![Home Page Mobile Design](app/images/prototype-02.png)
+
+![Login/Register Page PC Design](app/images/prototype2-01.png)
+
+![Login/Register Mobile Design](app/images/prototype2-02.png)
+
+![Suggestions Page PC Design](app/images/prototype3-01.png)
+
+![Suggestions Page Mobile Design](app/images/prototype3-02.png)
+
+![Content Pages PC Design](app/images/prototype4-01.png)
+
+![Content Pages Mobile Design](app/images/prototype4-02.png)
+
+
 Wow Factors
 -------------
 
@@ -32,13 +65,19 @@ Wow Factors
 2. Interactive Statistics Charts.
 3. Post/View Crime Suggestions Based On Current Location. (Web 2.0)
 
-Low Fidelity Prototypes
-----------------------------
-
-<img src="app/images/prototype-01.png">
-
-<img src="app/images/prototype-02.png">
-
 
 Bonus Mark Justification
 -------------
+
+Place Content Here.
+
+
+
+JSLint Validation
+-------------
+
+The main.js file was validated on JSLint with "Tolerate Messy White Space Option" selected.
+
+Globals
+
+angular, Firebase, console, google, alert

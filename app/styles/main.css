@@ -249,7 +249,7 @@ footer .copyright {
   width: 475px;
   transition-duration: 1s;
   transition-timing-function: linear;
-} 
+}
 
 .suggestion-area{
   margin-top: 50px;
@@ -277,6 +277,12 @@ h4,p.suggestion{
   display:block;
 }
 
+@media screen and (max-width: 500px) {
+    body{
+        font-size: 15px;
+    }
+}
+=======
 .carousel-inner > .item > img {
     margin: 0 auto;
 }
