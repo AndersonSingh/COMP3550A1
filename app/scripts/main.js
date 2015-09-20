@@ -132,7 +132,7 @@
 
 .controller("graphControllerSol2",["$scope", function($scope){
   $scope.myValues=[87.1,91.7,92.5,87.7,88.8];
-      
+
   $scope.myObj2 = {
   type: "line",
   title: {
@@ -207,21 +207,93 @@
 
   $scope.user = {};
 
+  $scope.validatePassword = function(user){
+      var pass1 = user.password;
+      var pass2 = user.passwordrepeat;
+
+      var pass1Len = user.password.length;
+      var pass2Len = user.passwordrepeat.length;
+
+
+      if(pass1Len == pass2Len){
+        for(var i = 0; i < pass1Len; i += 1){
+          var char1 = pass1.charAt(i);
+          var char2 = pass2.charAt(i);
+          if(char1 !== char2){
+            return false
+          }
+        }
+      }
+      else{
+        return false;
+      }
+
+      return true;
+    };
+
+    $scope.passwordStrength =  function(password) {    // Checks is password entered is strong i.e has a length of 10 and atleast one capital and common letter, a number and a symbol
+    	 var hasCapital = false;
+    	 var hasCommon = false;
+    	 var hasNumber = false;
+    	 var hasSymbol = false;
+     	 var minLength = 10;
+    	 var passwordLen = password.length;
+    	 if(passwordLen == minLength){
+    		  for(var idx = 0; idx < passwordLen; idx += 1){
+    			 var character = password.charAt(idx);
+    			 if(isLetter(character)){
+    			   	if(isCapital(character)){
+    				  	hasCapital = true;
+    				  }else{
+    					 hasCommon = true;
+    				  }
+    			 }else if(isNumber(character)){
+    			   	hasNumber = true;
+    			 }
+    			 else{
+    			   	hasSymbol = true;
+    			 }
+    		  }
+
+    		return hasCommon && hasCapital && hasNumber && hasSymbol;
+    	}
+
+
+    	return false;
+
+    };
+
+    $scope.emailValidation = function(email){
+          var hasSymbol = false;
+          var emailLen = email.length;
+          for(var i = 0; i < emailLen; i += 1){
+            var character = email.charAt(i);
+            if(character === "@"){
+              hasSymbol = true;
+            }
+          }
+
+          return hasSymbol;
+
+        }
+
   /* this function uses firebase simple email and password method to create a user account. */
   $scope.registerUser = function(){
 
-    var ref = new Firebase("https://comp3550a1.firebaseio.com");
+    if($scope.validatePassword($scope.user) === true && $scope.passwordStrength($scope.user.password) === true && $scope.emailValidation($scope.user.email) === true){
 
-    ref.createUser($scope.user,function(error, userData){
-      if(error){
-        alert(error);
+      var ref = new Firebase("https://comp3550a1.firebaseio.com");
+      ref.createUser($scope.user,function(error, userData){
+        if(error){
+          alert(error);
+        }
+        else{
+          alert("Successfully created user account. You may now login.");
+  				console.log(userData);
+        }
+      });
 
-      }
-      else{
-        alert("Successfully created user account. You may now login.");
-				console.log(userData);
-      }
-    });
+    }
 
   };
 
@@ -393,7 +465,7 @@
 }]);
 }());
 
-/*Checks for the @ symbol in a given email address*/ 
+/*Checks for the @ symbol in a given email address*/
 function emailValidation(email){
       var hasSymbol = false;
       var emailLen = email.length;
@@ -403,71 +475,15 @@ function emailValidation(email){
           hasSymbol = true;
         }
       }
-      
+
       if(hasSymbol == false){
         alert("Invalid email");
       }
-      
+
     }
-    
+
     var user = {
       email:"",
       password:"",
       passwordrepeat:""
     };
-    // Checks is password entered is strong i.e has a length of 10 and atleast one capital and common letter, a number and a symbol
-function isPasswordStrong(password) {
-	 var hasCapital = false;
-	 var hasCommon = false;
-	 var hasNumber = false;
-	 var hasSymbol = false;
- 	 var minLength = 10;
-	 var passwordLen = password.length;
-	 if(passwordLen == minLength){
-		  for(var idx = 0; idx < passwordLen; idx += 1){
-			 var character = password.charAt(idx);
-			 if(isLetter(character)){
-			   	if(isCapital(character)){
-				  	hasCapital = true;
-				  }else{
-					 hasCommon = true;
-				  }
-			 }else if(isNumber(character)){
-			   	hasNumber = true;
-			 }
-			 else{
-			   	hasSymbol = true;
-			 }
-		  }
-		
-		return hasCommon && hasCapital && hasNumber && hasSymbol;
-	}
-	
-	
-	return false;
-
-}
-    //Check to validate if the password entered by a user registering is the same as the repeated password
-function passwordValidation(user){
-    var pass1 = user.password;
-    var pass2 = user.passwordrepeat;
-      
-    var pass1Len = user.password.Length;
-    var pass2Len = user.passwordrepeat.Length;
-      
-    if(pass1Len == pass2Len){
-      for(var i = 0; i < pass1Len; i += 1){
-        var char1 = pass1.chartAt(i);
-        var char2 = pass2.chartAt(i);
-        if(char1 !== char2){
-          alert("Passwords don't match");
-          return false
-        }
-      }
-    }
-    else{
-      return false;
-    }
-      
-    return true;
-  }
