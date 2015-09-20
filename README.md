@@ -69,7 +69,9 @@ Wow Factors
 Bonus Mark Justification
 -------------
 
-Place Content Here.
+The website deserves the bonus mark because a great deal of time was spent on implementing additional functionality that was not part of the marking scheme. The site features the ability to authenticate and access functionality that a regular visitor will not be privy to, such as the ability to post in the crime suggestion box which is explained below.
+ 
+The website features a crime suggestion box that uses HTML5 ’s geolocation and Google Maps API’s reverse geocoding features to determine the Town/City the user is currently located in, and displays crime suggestions dynamically from visitors in that area only. The suggestion box is also real time meaning that as new suggestions are posted in your area, the box automatically updates without user intervention.
 
 
 
