@@ -39,6 +39,7 @@ hr.small {
   font-weight: 800;
   letter-spacing: 1px;
 }
+
 @media only screen and (min-width: 768px) {
   .navbar-custom {
     background: transparent;
@@ -276,8 +277,21 @@ h4,p.suggestion{
   display:block;
 }
 
+<<<<<<< HEAD
 @media screen and (max-width: 500px) {
     body{
         font-size: 15px;
     }
 }
+=======
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
+
+.carousel-indicators li {
+  background-color: #000000;
+}
+.carousel-indicators .active {
+  background-color: #FF0000;
+}
+>>>>>>> 57fa74ab697de86dd2d4fb49a4cca849b9f65493
