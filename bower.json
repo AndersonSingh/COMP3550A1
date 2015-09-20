@@ -2,7 +2,12 @@
   "name": "comp3550a1",
   "private": true,
   "dependencies": {
-    "bootstrap": "~3.3.5"
+    "bootstrap": "~3.3.5",
+    "angular": "~1.4.6",
+    "angular-ui-router": "~0.2.15",
+    "firebase": "~2.2.9",
+    "angularfire": "~1.1.2",
+    "zingchart-angularjs": "~1.0.4"
   },
   "overrides": {
     "bootstrap": {
