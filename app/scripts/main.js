@@ -531,10 +531,8 @@
 
 }());
 
-
-function loadXMLDoc()
-{
-  "use strict";
+function changeContent(){
+"use strict";
 var xmlhttp;
 
 xmlhttp=new XMLHttpRequest();
