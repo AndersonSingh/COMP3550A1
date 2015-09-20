@@ -75,12 +75,10 @@ The site features the ability to authenticate and access functionality that a re
  
 -> Using HTML5 ’s geolocation and Google Maps API’s reverse geocoding features to determine the Town/City the user is currently located in, and displays crime suggestions dynamically from visitors in that area only. The suggestion box is also real time meaning that as new suggestions are posted in your area, the box automatically updates without user intervention.
 
--> Using dynamic charts (zingcharts for angular.) Harnessing the power of the zingchart library and knowing the workings of the attributes, we were able to extract any data we wanted from
-the report and generate our own graph which has extended capabilty than just viewing a screenshot of a graph from the report. Due to the fact that these graphs were dynamic it was thought of doing
-one to repesent the amount of people per area entering suggestions and the users would we able to see in real time the various areas and the number of suggestions but due to the time restrictions 
+-> Using dynamic charts (zingcharts for angular) and harnessing its power, we were able to extract any data we wanted from the report and generate our own graphs which 
+have extended capabilty rather than just viewing a screenshot of a graph from the report. Due to the fact that these graphs were dynamic it was thought of doing one to repesent the 
+amount of people per area entering suggestions and the users would we able to see in real time, the various areas and the number of suggestions but due to the time restrictions 
 we weren't able to.
-
-
 
 JSLint Validation
 -------------
