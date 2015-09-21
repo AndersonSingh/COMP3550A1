@@ -457,14 +457,14 @@
     var userResult = $scope.isEmpty($scope.user.email);
     var passResult = $scope.isEmpty($scope.user.password);
 
-    if( userResult==false && passResult==false){
+    if( userResult===false && passResult===false){
       AuthService.setAuth($scope.user);
     }
     else{
-      if(userResult==true){
+      if(userResult===true){
         alert("UserName field is blank.");
       }
-      if(passResult==true){
+      if(passResult===true){
         alert("Password field is blank.");
       }
     }
