@@ -215,6 +215,7 @@ th {
 /* footer styling */
 footer {
   padding: 50px 0 65px;
+  position: static;
 }
 footer .list-inline {
   margin: 0;
