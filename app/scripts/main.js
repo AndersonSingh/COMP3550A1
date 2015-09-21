@@ -24,7 +24,7 @@
 	    .state("register", {
 	      url: "/register",
 	      templateUrl: "register.html",
-	      //controller: "registerCtrl"
+	      controller: "registerCtrl"
 	    })
 
 	    .state("login", {
@@ -213,6 +213,79 @@
   };
 }])
 
+.controller("graphControllerCause1",["$scope", function($scope){
+  $scope.myValues=[6.6,14.3,9.4,14.9,3.0,5.8,4.4];
+
+  $scope.myObj2 = {
+  type: "bar3d",
+  title: {
+    fontSize:18,
+    text: "People Who Believe Street Gangs Make Their Neighbourhood Safe"
+  },
+  subtitle: {
+    fontSize:16,
+    text: "Year - 2010 "
+  },
+  scaleX: {
+    values:["Antigua &<br>Barbuda","Barbados","Guyana","Jamaica","St. Lucia",
+        "Suriname","Trinidad &<br>Tobago"],
+    itemsOverlap:true,
+    item:{
+        fontSize:14,
+        autoAlign:true
+    },
+    guide:{
+      lineColor:"red",
+      lineWidth:2
+    }
+  },
+  scaleY: {
+    label: {
+      text: "Percent",
+      paddingLeft:17,
+      fontSize:16
+    },
+    item:{
+        fontSize:14,
+        autoAlign:true
+    },
+    guide:{
+    lineColor:"red",
+    lineWidth:2
+    }
+  },
+  tooltip:{
+      text:"%v %",
+      fontSize:20
+  },
+  legend: {
+        minimize:1,
+        marginTop :60,
+        header : {
+            text: 'Country',
+            backgroundCcolor: 'silver'
+         }
+       },
+  series: [
+    {
+      text: "Country",
+      lineColor: "#cc0000",
+      backgroundColor: "#cc0000",
+      borderColor: "#cc0000",
+      marker: {
+        borderWidth: 0,
+        backgroundColor: "#cc0000"
+    }
+  }
+  ]
+  };
+
+  $scope.myRender = {
+      width:  "100%",
+      height: 'auto',
+      autoResize: true
+  };
+}])
 
 /*
   this controller will be placed on the registration page. It will allow a visitor

@@ -263,6 +263,8 @@
     </div>
   </div>
 
+  <br>
+
   <div class="row">
     <div id="crime-stats" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
@@ -275,8 +277,9 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
         <div class="item active">
-          <p class="text-center">The following chart shows the respondents who believe street gangs make their neighbourhoods safer in various Caribbean countries.</p>
-          <img src="images/gang.jpg" alt="Gangs on Safety">
+          <div ng-controller="graphControllerCause1">
+            <zingchart id="chart-1" zc-json="myObj2" zc-values="myValues" zc-render="myRender" ></zingchart>
+          </div>
         </div>
         <div class="item">
           <p class="text-center">The following table shows the relationship between gangs and homicides in communities.</p>
@@ -290,9 +293,3 @@
     </div> <!-- Carousel -->
   </div>
 </div>
-
-<!--
-    <div ng-controller="graphController">
-      <zingchart id="chart-1" zc-values="myData" zc-type="bar" ></zingchart>
-  </div>
--->
