@@ -391,7 +391,7 @@
       if(userResult===true){
         alert("UserName field is blank.");
       }
-      if(passResult===){
+      if(passResult===true){
         alert("Password field is blank.");
       }
     }
