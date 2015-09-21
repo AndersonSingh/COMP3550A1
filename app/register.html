@@ -1,0 +1,51 @@
+<header  class="intro-header" style="background-image: url('images/register.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>Register</h1>
+                    <hr class="small">
+                    <span class="subheading"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+  <div class="page-header">
+    <h1>Register</h1>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <p>If you get an error on registration, please ensure you follow the guidelines below: </p>
+      <ol id="register-list-notes">
+        <li> Your email address is valid.</li>
+        <li> Your password and repeat password are the same. </li>
+        <li> Your password is atleast 10 characters in length and contains, a capital letter, common letter, number and a symbol.
+      </ol>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <p> Upon registering, you will then be able to login and use the website's suggestion feature.</p>
+    </div>
+  </div>
+  <br>
+  <form>
+  <div class="form-group">
+     <label for="userEmail">Email address</label>
+     <input type="email" class="form-control" id="userEmail" placeholder="Email" data-ng-model="user.email">
+   </div>
+   <div class="form-group">
+     <label for="userPassword">Password</label>
+     <input type="password" class="form-control" id="userPassword" placeholder="Password" data-ng-model="user.password">
+   </div>
+   <div class="form-group">
+     <label for="userPassword">Repeat Password</label>
+     <input type="password" class="form-control" id="userPassword" placeholder="Password" data-ng-model="user.passwordrepeat">
+   </div>
+   <button type="submit" class="btn btn-default" data-ng-click="registerUser();">Register</button>
+  </form>
+</div>

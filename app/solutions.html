@@ -1,0 +1,211 @@
+<!--
+  This page as well as all other pages in this project contain this block of code which allows the header of the page to be displayed.
+  A background image accompanied by all the links present within the site is present.
+-->
+
+<header data-ng-init="initSuggestions();" class="intro-header" style="background-image: url('images/sols.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>{{area}}</h1>
+                    <hr class="small">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!--
+  This is the content section of the page. Firstly, three images along with short descriptions will be displayed in a row. The use of the "row" class followed by 
+  "col-sm-6 col-md-4"  allowed the displaying of 3 images along with their text to be done in a single row.
+-->
+
+
+<div class="container">
+    <div class="page-header">
+    	<h1 class="text-center">Solutions to Street Gangs</h1>
+    </div>
+
+    <div class="row">
+      <h3>Combatting the problem...</h3>
+  	</div>
+
+    <div class="row">
+	  <div class="col-sm-6 col-md-4">
+	    <div class="thumbnail">
+	      <img src="http://www.clintonlindsay.com/wp-content/uploads/2014/09/PoliceTrinidadTobago.jpg" alt="...">
+	      <div class="caption">
+	        <h3>Firstly</h3>
+	        <p class="home-content-paragraph">Caribbean citizens want safer societies.
+					Governments have made considerable efforts
+					to improve security. The challenge is
+					how to respond more effectively to broaden
+					the results for the society as a whole with respect
+					to citizen’s rights and inclusion of the
+					most vulnerable.
+			</p>
+	      </div>
+	    </div>
+	  </div>
+
+	   <div class="col-sm-6 col-md-4">
+	    <div class="thumbnail">
+	      <img src="http://www.ctntworld.com/cnews2/images/tt%20police%20car.jpg" alt="...">
+	      <div class="caption">
+	        <h3>Secondly</h3>
+	        <p class="home-content-paragraph">The approach is crucial to making Caribbean
+				societies safer and more just. It
+				requires completing the shift to citizen
+				security in the framework of human development.
+				This means rebalancing policy so
+				that there is a stronger focus on social crime
+				prevention, and grounding this policy in
+				the overall human development strategies
+				both at the national and regional levels.
+			</p>
+	      </div>
+	    </div>
+	  </div>
+
+	   <div class="col-sm-6 col-md-4">
+	    <div class="thumbnail">
+	      <img src="https://mgtvkxrm.files.wordpress.com/2014/04/police-gun1.jpg?w=640" alt="...">
+	      <div class="caption">
+	        <h3>Thirdly</h3>
+	        <p class="home-content-paragraph">An important aspect of policy that is
+				citizen security oriented, is the reform of
+				implementing institutions concerned with
+				crime control and law enforcement to make
+				them more fair, efficient, transparent and
+				accountable.
+		  </p>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+<!--
+  After the displaying of the images and the description, the user is presented with more reading to do, informing him/her om
+  the solutions that be taken up to curb the incidence of street gangs.
+  After these 2 paragraphs, a graph containing data extracted from the human development reports will be displayed.
+-->
+
+	<div class="row">
+		<div class="col-lg-12 col-md-12 col-sm-12">
+			<p class="home-content-paragraph"> The police system in the Caribbean
+				faces several challenges to complete a transition
+				to citizen security. These include, first,
+				improving police capacity and capabilities
+				to enhance performance in terms of responsiveness
+				and effectiveness. The second challenge
+				is promoting legitimacy, which comes
+				from integrity and improved accountability,
+				and eradicating corruption, which
+				weakens public confidence. Third is reducing
+				abuses of power and fully recognising
+				human rights. Overcoming these problems
+				will allow community policing and citizens’
+				cooperation to prevent crime and control
+				criminality.
+			</p>
+			<p class="home-content-paragraph">
+				The survey results provide some grounds
+				for optimism. Citizens perceive their police
+				forces as moderately legitimate and competent
+				and show willingness to become coproducers
+				of their own security (chart 6).
+				Further, the citizens of each nation manifest
+				support for governments investing more resources
+				in the reform of the police services
+				in order to increase their effectiveness.
+				Within Caribbean justice systems, legal
+				codes and institutional arrangements continue
+				to present characteristics of the colonial
+				legacy. Arbitrary arrest and detention
+				is prohibited by the Constitution, and the
+				systems allow visiting of incarcerated persons
+				by external observers. But the criminal
+				justice system still faces challenges. Case
+				processing delays and backlogs, low conviction
+				rates, prison overcrowding and insufficient
+				alternatives to prison, all strongly
+				interconnected, impact on the capacity for
+				fairness, effectiveness, transparency and accountability.
+			</p>
+			<br>
+			<!--
+			  The following lines of code show the html code for the first graph. It refers to a controller in the javascript file while takes over the execution.
+			-->
+			
+			<div ng-controller="graphControllerSol1">
+	    		<zingchart id="chart-1" zc-json="myObj" zc-values="myValues" zc-render="myRender" ></zingchart>
+			</div>
+			
+
+
+		</div>
+	</div>
+
+	<br>
+	<br>
+	<div class="row">
+		<div class="col-lg-12 col-md-12 col-sm-12">
+			<p class="home-content-paragraph"> The efforts by governments and experiences
+				already underway in the Caribbean
+				show a new and positive direction that
+				fosters the transition to citizen security
+				in the context of the democratic system
+				and constitutional form of government.
+				The states’ respect for civil and political
+				liberties creates favourable circumstances.
+				So, too, do the participation of civic
+				organizations, more engaged publics,
+				and the media, which contributes to creating
+				more awareness on pressing issues,
+				promoting debate and demanding accountability
+				in public actions.
+			</p>
+			<br>
+			<!--
+			  The following lines of code show the html code for the first graph. It refers to a controller in the javascript file while takes over the execution.
+			-->
+			
+			<div ng-controller="graphControllerSol2">
+		    	<div zingchart id="chart-2" zc-json="myObj2" zc-values="myValues" zc-width="100%" zc-height="100%" ></div>
+		    </div>
+		    <br>
+			<p class="home-content-paragraph">
+				Levels of insecurity remain high in the
+				region and have a negative impact on
+				human development. For Caribbean
+				people crime, violence and insecurity
+				are important social problems since they
+				limit individuals’ choices and liberties;
+				represent threats to their physical integrity
+				and patrimony and disrupt their
+				daily lives. Insecurity is partly rooted in
+				a lack of confidence in the institutions of
+				the state, in the police and in the justice
+				system.
+				There is a demand for change that
+				calls for greater attention to crime as a
+				social problem and for the recognition
+				that security cannot reliably rest on the
+				capabilities and performances of law
+				enforcement.
+				There is official recognition of the
+				need for comprehensive reform of
+				the police and justice services in
+				several countries. There are promising
+				Caribbean efforts in this direction, but
+				these have neither been evaluated nor
+				properly documented.
+			</p>
+		</div>
+	</div>
+	<br>
+	<br>
+	<br>
+  </div>
